@@ -10,7 +10,7 @@
 #include <iostream>
 
 
-int main
+public main
 {
 	int x;
 	cout << "Please input an integer\n";
