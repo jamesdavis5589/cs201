@@ -1,0 +1,51 @@
+/**
+ *James Davis
+ *September 11th
+ *CS201
+ *HW1
+ *HW1.cpp
+ *Diamond program
+ *This program will take user input int, then output a diamond shape with a corresponding size
+*/
+
+#include <iostream>
+
+
+int main()
+{
+	int x;
+	std::cout << "Please input an integer\n";
+	std::cin >> x;
+
+	//print out diamond
+	int r;
+	for (int i = 0; i <= x; i++)
+	{
+		for (int k = 0; k < x - i; k++)
+		{
+			std::cout << " ";
+		}
+
+		for (int p = 0; p < 2 * i - 1; p++)
+		{
+			std::cout << "#";
+		}
+		std::cout << "\n";
+		r = i;
+	}
+
+	for (int i = r-=1; i > 0; i--)
+	{
+		for (int k = 0; k < x - i; k++)
+		{
+			std::cout << " ";
+		}
+
+		for (int p = 0; p < 2 * i - 1; p++)
+		{
+			std::cout << "#";
+		}
+		std::cout << "\n";
+	}
+
+}
