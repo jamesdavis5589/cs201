@@ -3,7 +3,7 @@ James Davis
 September 11th
 CS201
 Lab4.cpp
-This program will
+This program will print out 1-100, with divisibles of 3 and 5 being replaced with "Fizz" and "Buzz" respectively, or "Fizz Buzz" if it's divisible by both
 */
 
 #include <iostream>
