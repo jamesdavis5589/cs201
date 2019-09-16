@@ -15,7 +15,7 @@ void m6(std::string st)
 	std::cout << st << std::endl;
 
 	//prints out length in hashtags
-	int ln = st.size() - 1;
+	int ln = st.size();
 	for (int i = 0; i < ln; i++)
 	{
 		std::cout << "#";
