@@ -3,7 +3,7 @@ James Davis
 CS201
 September 13th
 HW! - greatest.cpp
-This program will
+This program will tell you the largest integer you entered
 */
 
 #include <iostream>
