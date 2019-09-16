@@ -17,6 +17,12 @@ int main()
 	std::cout << "Please input an integer\n";
 	std::cin >> x;
 
+	if (x < 0)
+	{
+		std::cout << "Inappropriate integer, please enter a posative integer\n\n";
+		main();
+	}
+
 	//print out diamond
 	int r;
 	for (int i = 0; i <= x; i++)
