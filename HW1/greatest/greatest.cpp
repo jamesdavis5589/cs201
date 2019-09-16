@@ -11,7 +11,7 @@ This program will
 int main()
 {
 	int x;
-	int big=1;
+	int big = 0;
 	int i = 24;
 
 	while(i!=0)
@@ -24,6 +24,12 @@ int main()
 
 		if (x <= 0)
 			break;
+	}
+
+	if (big == 0)
+	{
+		std::cout << "No posative integers were entered";
+		return 0;
 	}
 
 	std::cout << "The largest integer you entered was ";
