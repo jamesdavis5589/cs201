@@ -8,7 +8,7 @@
 // For CS 201 Fall 2018
 // Source for Integer I/O Package
 
-#include "intio.h"  // Header for this package ----- (James here, changed "intio.hpp" to "intio.h" since I'm a dummy and wrote the .h file myself)
+#include "intio.hpp"  // Header for this package
 #include <iostream>
 using std::cout;
 using std::cin;
