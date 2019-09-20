@@ -8,6 +8,7 @@ This program will define preestablished functions declared in separate .hpp file
 
 #include lab8.hpp
 #include intio.hpp
+#include <iostream>
 
 int doInput()
 {
