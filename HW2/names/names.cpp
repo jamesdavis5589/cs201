@@ -4,7 +4,7 @@ CS201
 September 18th
 Homework 2
 names.cpp
-This prgram will
+This prgram will provide functions for managing vectors
 */
 
 #include <iostream>
@@ -16,14 +16,14 @@ void inputnames(std::vector<std::string> & names)
 {
 	std::string x;
 	std::cin >> x;
-	vector.pushBack(x);
+	names.push_back(x);
 }
 
 bool doesNameExist(const std::string & nametoFind, const std::vector<std::string> & names)
 {
-	for (int i = 0; i < vector.size(); i++) //replace vector.size()
+	for (int i = 0; i < names.size(); i++)
 	{
-		if (string == vector[i]) //replace string & vector[i]
+		if (names[i] == nametoFind)
 		{
 			return true;
 			break;
@@ -32,18 +32,18 @@ bool doesNameExist(const std::string & nametoFind, const std::vector<std::string
 	return false;
 }
 
-void printNames(const std::vector<string> & names)
+void printNames(const std::vector<std::string> & names)
 {
-	for (int i = 0; i < vector.size(); i++) //replace vector.size()
+	for (int i = 0; i < names.size(); i++)
 	{
-		std::cout << vector[i]; //replace vector[i]
+		std::cout << names[i];
 		std::cout << "\n";
 	}
 }
 
 int main(int argc, char **argv)
 {
-	std::vector < std::string::names;
+	std::vector << std::string::names;
 	for (int i = 0; i < 10; i++)
 	{
 		std::string name;
