@@ -34,7 +34,7 @@ int main()
 
 		for (int p = 0; p < 2 * i - 1; p++)
 		{
-			std::cout << "#";
+			std::cout << "G";
 		}
 		std::cout << "\n";
 		r = i;
@@ -49,7 +49,7 @@ int main()
 
 		for (int p = 0; p < 2 * i - 1; p++)
 		{
-			std::cout << "#";
+			std::cout << "G";
 		}
 		std::cout << "\n";
 	}

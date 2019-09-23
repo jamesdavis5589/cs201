@@ -3,20 +3,11 @@ James Davis
 CS201
 September 23rd
 Lab 9 - modifyString.h
-This program will
+This program will create a prototype for the function
 */
 
 #pragma once
 
 #include <string>
-#include <iostream>
 
-int exy(int x, std::string & y)
-{
-	for (int i = 0; i < x; i++)
-	{
-		y = y + "X";
-	}
-
-	return y.size();
-}
+int exy(int x, std::string& y);
