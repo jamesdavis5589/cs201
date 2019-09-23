@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 	{
 		std::string name;
 		std::cout << "Please enter a name:\n";
-		std::getline(cin, name);
+		std::getline(std::cin, name);
 		names.push_back(name);
 	}
 	return 0;
