@@ -19,7 +19,7 @@ int main()
 	//print lower case
 	for (int i = 0; i < inp.size(); i++)
 	{
-		if (inp[i] > 'Z' && inp[i] > '_')
+		if (inp[i] >= 'a' && inp[i] <= 'z')
 		{
 			std::cout << inp[i];
 		}
@@ -29,7 +29,7 @@ int main()
 	//print upper case
 	for (int i = 0; i < inp.size(); i++)
 	{
-		if (inp[i] <= 'Z' && inp[i]> '@')
+		if (inp[i] >= 'A' && inp[i] <= 'Z')
 		{
 			std::cout << inp[i];
 		}
@@ -39,9 +39,9 @@ int main()
 	//print everything else
 	for (int i = 0; i < inp.size(); i++)
 	{
-		if (inp[i] <= 'Z' && inp[i] > '@' || inp[i] > 'Z' && inp[i] > '_')
+		if ((inp[i] >= 'a' && inp[i] <= 'z') || (inp[i] >= 'A' && inp[i] <= 'Z'))
 		{
-			
+			//do nothing
 		}
 		else
 			std::cout << inp[i];
