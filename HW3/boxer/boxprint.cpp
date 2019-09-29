@@ -20,5 +20,18 @@ int main()
 	std::cin >> x;
 	std::cout << "\n\n";
 
+	if (x < 0)
+	{
+		std::cout << "ERROR: Please enter a posative integer:";
+		main();
+	}
+
 	box(word, x);
+
+	char c;
+	std::cout << "\n\n\nWould you like to continue? (Y/N)\n";
+	std::cin >> c;
+
+	if (c == 'Y')
+		main();
 }
