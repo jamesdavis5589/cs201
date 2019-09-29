@@ -20,7 +20,11 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
+<<<<<<< HEAD
+    <ProjectGuid>{6F986748-771B-44D3-BA45-ECB8304410E8}</ProjectGuid>
+=======
     <ProjectGuid>{1170509A-866F-4426-9FF9-857A06EC19C3}</ProjectGuid>
+>>>>>>> bf4d226d47129d40ea0b7402948f9c3657220adf
     <RootNamespace>boxer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -124,6 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="boxer.cpp" />
+<<<<<<< HEAD
+    <ClCompile Include="boxprint.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="boxer.h" />
+=======
+>>>>>>> bf4d226d47129d40ea0b7402948f9c3657220adf
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
