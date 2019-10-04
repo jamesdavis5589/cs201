@@ -8,33 +8,38 @@ This program will hold the conversion functions regarding temperature
 
 #pragma once
 
+//Checks first letter to mitigate spelling errors, then carries out conversion
+
 //Temperature
-double CtoK(double x)
+double Cto(std::string s, double x)
 {
-	return x + 273.15;
+	//to kelvin
+	if (s[0] == 'k')
+		return x + 273.15;
+
+	//to Farenheit
+	if (s[0] == 'f')
+		return x * (9 / 5) + 32;
 }
 
-double CtoF(double x)
+double Kto(std::string s, double x)
 {
-	return x * (9 / 5) + 32;
+	//to celsius
+	if (s[0] == 'c')
+		return x - 273.15;
+
+	//to farenheit
+	if(s[0]=='f')
+	return (x - 273.15) * (9 / 5) + 32;
 }
 
-double KtoC(double x)
+double FtoC(std::string s, double x)
 {
-	return x - 273.15;
-}
+	//to celsius
+	if (s[0] == 'c')
+		return (x - 32) / (9 / 5);
 
-double KtoF(double x)
-{
-	return KtoC(x) * (9 / 5) + 32;
-}
-
-double FtoC(double x)
-{
-	return (x - 32) / (9 / 5);
-}
-
-double FtoK(double x)
-{
-	return (FtoC(x) - 273.15);
+	//to kelvin
+	if(s[0]=='k')
+	return (x - 32) / (9 / 5) - 273.15;
 }
