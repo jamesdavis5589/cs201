@@ -18,12 +18,15 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lengthFunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tempFunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tempFunc.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="lengthFunc.h">
+    <ClInclude Include="proto.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

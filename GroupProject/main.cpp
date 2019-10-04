@@ -6,8 +6,7 @@ Group Project 1 - main.cpp
 This program will utilise and implement functions created in the header files
 */
 
-#include <iostream>
-#include "tempFunc.h"
+#include "proto.h"
 
 
 int main()

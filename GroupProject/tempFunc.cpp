@@ -6,7 +6,7 @@ Group Project 1 - tempFunc.h
 This program will hold the conversion functions regarding temperature
 */
 
-#pragma once
+#include "proto.h"
 
 //Checks first letter to mitigate spelling errors, then carries out conversion
 
@@ -29,17 +29,17 @@ double Kto(std::string s, double x)
 		return x - 273.15;
 
 	//to farenheit
-	if(s[0]=='f')
-	return (x - 273.15) * (9 / 5) + 32;
+	if (s[0] == 'f')
+		return (x - 273.15) * (9 / 5) + 32;
 }
 
-double FtoC(std::string s, double x)
+double Fto(std::string s, double x)
 {
 	//to celsius
 	if (s[0] == 'c')
 		return (x - 32) / (9 / 5);
 
 	//to kelvin
-	if(s[0]=='k')
-	return (x - 32) / (9 / 5) - 273.15;
+	if (s[0] == 'k')
+		return (x - 32) / (9 / 5) - 273.15;
 }
