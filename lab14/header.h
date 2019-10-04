@@ -3,7 +3,7 @@ James Davis
 CS201
 October 4th
 lab 14 - header.h
-this program will
+this program will host the shrink function
 */
 
 #pragma once

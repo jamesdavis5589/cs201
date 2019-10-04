@@ -3,7 +3,7 @@ James Davis
 CS201
 October 4th
 lab 14 - main.cpp
-this program will
+this program will test the shrink function
 */
 
 #include "header.h"
