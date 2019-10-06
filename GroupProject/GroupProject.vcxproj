@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="lengthFunc.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainFunc.cpp" />
     <ClCompile Include="tempFunc.cpp" />
   </ItemGroup>
   <ItemGroup>
