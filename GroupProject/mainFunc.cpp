@@ -19,3 +19,18 @@ void abrvt(std::string& s)
 	if (s == "kilometer")
 		s = "km";
 }
+
+std::string setType(std::string s)
+{
+	if (s[0] == 'f' || s[0] == 'c' || s[0] == 'k')
+		return "temp";
+
+
+	if (s == "cm" || s == "mm" || s == "m" || s == "km")
+		return "length";
+
+	if (s == "inch" || s == "foot" || s == "mile")
+		return "length";
+
+	return "ERROR";
+}

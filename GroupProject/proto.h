@@ -13,6 +13,7 @@ This program will serve as a central hub for all of the functions we create and 
 
 //main
 void abrvt(std::string& s);
+std::string setType(std::string s);
 
 //temperature
 double Cto(std::string s, double x);
