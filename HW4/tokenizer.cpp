@@ -3,7 +3,7 @@ James Davis
 CS201
 October 15th
 HW4 - tokenizer.cpp
-This program will
+This program will define functions
 */
 
 #include "tokenizer.h"
@@ -54,5 +54,17 @@ unsigned stringToTokenWS(std::vector <std::string>& tokens)
 
 void analyzeTokens(const std::vector <std::string>& tokens)
 {
+	std::string type;
 
+	for (std::string s : tokens)
+	{
+		if (s == "")
+			type = "blank";
+		else if (std::istringstream(s))
+			type = "integer";
+		else
+			type = "string";
+
+		std::cout << "\"" << s << "\" - " << type << std::endl;
+	}
 }
