@@ -3,7 +3,7 @@ James Davis
 CS201
 October 15th
 HW4 - database.h
-This program will
+This program will house include statements and non-main prototypes
 */
 
 #pragma once
