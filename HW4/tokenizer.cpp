@@ -47,6 +47,8 @@ unsigned stringToTokenWS(std::vector <std::string>& tokens)
 		v >> x;
 
 		tt + digit(x);
+
+		continue;
 	}
 	
 	return tt;
