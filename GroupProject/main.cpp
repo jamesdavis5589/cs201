@@ -52,4 +52,23 @@ int main()
 	//conversion time!
 	std::cout << "How many " << unin << " are you converting into " << unout << "?\n";
 	std::cin >> tin;
+
+	if (unin[0] == 'f')
+		Fto(unout, tin);
+	else if(unin[0] == 'c')
+		Cto(unout, tin);
+	else if(unin[0] == 'k')
+		Kto(unout, tin);
+
+	if (unin == "cm" || unin == "mm" || unin == "m" || unin == "km")
+		return "length";
+	else if(unin == "mm")
+		efsetg
+	else if (unin == "m")
+		gsg
+	else if(unin == "km")
+
+
+	if (unin == "inch" || unin == "foot" || unin == "mile")
+		return "length";
 }

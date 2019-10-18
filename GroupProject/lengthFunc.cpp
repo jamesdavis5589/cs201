@@ -8,6 +8,7 @@ This program will hold the conversion functions regarding lengths
 
 #include "proto.h"
 
+//Metric
 double Mto(std::string s, double x)
 {
 	//to millimeters
@@ -23,6 +24,32 @@ double Mto(std::string s, double x)
 		return 1000 * x;
 }
 
+double MMto(std::string s, double x)
+{
+	//to centimeters
+
+	//to meters
+
+	//to kilometers
+
+	//to inches
+
+	//to feet
+
+	//to miles
+}
+
+double CMto(std::string s, double x)
+{
+
+}
+
+double KMto(std::string s, double x)
+{
+
+}
+
+//Imperial
 double inchto(std::string s, double x)
 {
 	//to foot
