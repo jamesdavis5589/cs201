@@ -27,6 +27,33 @@ void insertionSort(std::vector<int>& data) {
 	// We found where temp goes.
 
 //	8. Move it into the element at j
+
+	int c; //current
+	int s; //smallest
+	int ss; //smallest (slot)
+
+		for (int i = 1; i < data.size(); i++)
+		{
+			c = data[i];
+			s = c;
+
+			//finding any value smaller than c
+			for (int k = 0; k < i; k++)
+			{
+				if (data[k] < s)
+				{
+					s = data[k];
+					ss = k;
+				}
+			}
+
+			//moving current to smallest slot
+			if (s != c)
+			{
+				data[i] = s;
+				data[ss] = c;
+			}
+		}
 }
 
 bool isEqual(const std::vector<int>& v1, const std::vector<int>& v2) {

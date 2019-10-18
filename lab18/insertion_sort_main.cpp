@@ -1,5 +1,5 @@
 /**
- * @file     insertion_sort.cpp
+ * @file     insertion_sort.cpp (main)
  * @author   Student Name
  * @version  Feb 17, 2019
  * John Quan
