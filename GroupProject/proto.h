@@ -22,8 +22,12 @@ double Fto(std::string s, double x);
 
 //length
 double Mto(std::string s, double x);
+double CMto(std::string s, double x);
+double MMto(std::string s, double x);
+double KMto(std::string s, double x);
 double inchto(std::string s, double x);
 double footto(std::string s, double x);
+double mileto(std::string s, double x);
 
 //NOTE: I want to set it so that each type has a central unit, which all other units in that type convert to first before
 //switching to other types

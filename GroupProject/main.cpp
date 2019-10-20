@@ -60,15 +60,20 @@ int main()
 	else if(unin[0] == 'k')
 		Kto(unout, tin);
 
-	if (unin == "cm" || unin == "mm" || unin == "m" || unin == "km")
-		return "length";
-	else if(unin == "mm")
-		efsetg
+	if (unin == "cm")
+		CMto(unout, tin);
+	else if (unin == "mm")
+		MMto(unout, tin);
 	else if (unin == "m")
-		gsg
-	else if(unin == "km")
+		Mto(unout, tin);
+	else if (unin == "km")
+		KMto(unout, tin);
 
 
-	if (unin == "inch" || unin == "foot" || unin == "mile")
-		return "length";
+	if (unin == "inch")
+		inchto(unout, tin);
+	if (unin == "foot")
+		footto(unout, tin);
+	if (unin == "mile")
+		mileto(unout, tin);
 }
