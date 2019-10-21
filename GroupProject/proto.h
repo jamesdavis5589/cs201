@@ -1,5 +1,5 @@
 /*
-James davis and Alex Fraxia
+James davis and Alex Frania
 CS201
 October 3rd
 Group Project 1 - proto.h

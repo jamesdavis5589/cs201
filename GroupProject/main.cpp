@@ -1,5 +1,5 @@
 /*
-James davis and Alex Fraxia
+James davis and Alex Frania
 CS201
 October 3rd
 Group Project 1 - main.cpp
@@ -23,11 +23,11 @@ int main()
 	//unit inputs
 	std::cout << "What would your input UNITS be?\n";
 	std::cin >> unin;
-	std::cout << "What unit would you like to convert to?";
+	std::cout << "What unit would you like to convert to?\n";
 	std::cin >> unout;
 
 	//checking
-	std::cout << "You are converting " << unin << " to " << unout << ", right? (y/n)";
+	std::cout << "You are converting " << unin << " to " << unout << ", right? (y/n)\n";
 	std::cin >> check;
 	if (check == 'n')
 	{
@@ -36,6 +36,8 @@ int main()
 	}
 
 	//abbreviating if possible
+	std::string cp = unin;
+	std::string cp2 = unout;
 	abrvt(unin);
 	abrvt(unout);
 
@@ -54,26 +56,28 @@ int main()
 	std::cin >> tin;
 
 	if (unin[0] == 'f')
-		Fto(unout, tin);
+		tout = Fto(unout, tin);
 	else if(unin[0] == 'c')
-		Cto(unout, tin);
+		tout = Cto(unout, tin);
 	else if(unin[0] == 'k')
-		Kto(unout, tin);
+		tout = Kto(unout, tin);
 
 	if (unin == "cm")
-		CMto(unout, tin);
+		tout = CMto(unout, tin);
 	else if (unin == "mm")
-		MMto(unout, tin);
+		tout = MMto(unout, tin);
 	else if (unin == "m")
-		Mto(unout, tin);
+		tout = Mto(unout, tin);
 	else if (unin == "km")
-		KMto(unout, tin);
+		tout = KMto(unout, tin);
 
 
 	if (unin == "inch")
-		inchto(unout, tin);
+		tout = inchto(unout, tin);
 	if (unin == "foot")
-		footto(unout, tin);
+		tout = footto(unout, tin);
 	if (unin == "mile")
-		mileto(unout, tin);
+		tout = mileto(unout, tin);
+
+	std::cout << tin << " " << unin << " is equal to " << tout << " " << unout;
 }
