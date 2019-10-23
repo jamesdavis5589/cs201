@@ -79,5 +79,5 @@ int main()
 	if (unin == "miles")
 		tout = mileto(unout, tin);
 
-	std::cout << tin << " " << unin << " is equal to " << tout << " " << unout;
+	std::cout << tin << " " << unin << " is equal to " << tout << " " << unout << "\n\n\n";
 }
