@@ -22,6 +22,12 @@ double Mto(std::string s, double x)
 	//to kilometers
 	if (s == "km")
 		return 1000 * x;
+
+	//to inches
+
+	//to feet
+
+	//to miles
 }
 
 double MMto(std::string s, double x)
@@ -39,10 +45,16 @@ double MMto(std::string s, double x)
 		return (x * 1000)*1000;
 
 	//to inches
+	if (s == "inches")
+		return (x / .3048) / 12;
 
 	//to feet
+	if (s == "feet")
+		return x / .3048;
 
 	//to miles
+	if (s == "miles")
+		return (x / .3048) * 5280;
 }
 
 double CMto(std::string s, double x)
@@ -60,10 +72,16 @@ double CMto(std::string s, double x)
 		return (x * 100) * 1000;
 
 	//to inches
+	if (s == "inches")
+		return ((x / .3048) * 100) / 12;
 
 	//to feet
+	if (s == "feet")
+		return (x / .3048) * 100;
 
 	//to miles
+	if (s == "miles")
+		return ((x / .3048) * 100) * 5280;
 }
 
 double KMto(std::string s, double x)
@@ -81,21 +99,27 @@ double KMto(std::string s, double x)
 		return x / 1000;
 
 	//to inches
+	if (s == "inches")
+		return ((x / .3048) / 1000) / 12;
 
 	//to feet
+	if(s=="feet")
+		return (x / .3048) / 1000;
 
 	//to miles
+	if (s == "miles")
+		return ((x / .3048) / 1000) * 5280;
 }
 
 //Imperial
 double inchto(std::string s, double x)
 {
 	//to foot
-	if (s == "inch")
+	if (s == "inches")
 		return x * 12;
 
 	//to mile
-	if (s == "mile")
+	if (s == "miles")
 		return x * 12 * 5280;
 
 	//to millimeters
@@ -145,11 +169,11 @@ double footto(std::string s, double x)
 double mileto(std::string s, double x)
 {
 	//to inch
-	if (s == "inch")
+	if (s == "inches")
 		return (x / 5280) / 12;
 
 	//to feet
-	if (s == "foot")
+	if (s == "feet")
 		return x / 5280;
 
 	//to millimeters

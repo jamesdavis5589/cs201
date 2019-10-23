@@ -45,11 +45,11 @@ int main()
 	type1 = setType(unin);
 	type2 = setType(unout);
 
-	if (type1 != type2 || type1 == "ERROR")
+	/*if (type1 != type2 || type1 == "ERROR")
 	{
 		std::cout << "ERROR: Unit types do not match, please try again\n\n\n\n\n\n\n";
 		main();
-	}
+	}*/
 
 	//conversion time!
 	std::cout << "How many " << unin << " are you converting into " << unout << "?\n";
@@ -72,11 +72,11 @@ int main()
 		tout = KMto(unout, tin);
 
 
-	if (unin == "inch")
+	if (unin == "inches")
 		tout = inchto(unout, tin);
-	if (unin == "foot")
+	if (unin == "feet")
 		tout = footto(unout, tin);
-	if (unin == "mile")
+	if (unin == "miles")
 		tout = mileto(unout, tin);
 
 	std::cout << tin << " " << unin << " is equal to " << tout << " " << unout;
