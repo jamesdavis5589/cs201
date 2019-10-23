@@ -24,10 +24,16 @@ double Mto(std::string s, double x)
 		return 1000 * x;
 
 	//to inches
+	if (s == "inches")
+		return (x / .3048) / 12;
 
 	//to feet
+	if (s == "feet")
+		return x / .3048;
 
 	//to miles
+	if (s == "miles")
+		return (x / .3048) * 5280;
 }
 
 double MMto(std::string s, double x)
@@ -42,19 +48,19 @@ double MMto(std::string s, double x)
 
 	//to kilometers
 	if (s == "km")
-		return (x * 1000)*1000;
+		return (x * 1000) * 1000;
 
 	//to inches
 	if (s == "inches")
-		return (x / .3048) / 12;
+		return (x / .3048) / 12 / 1000;
 
 	//to feet
 	if (s == "feet")
-		return x / .3048;
+		return x / .3048 / 1000;
 
 	//to miles
 	if (s == "miles")
-		return (x / .3048) * 5280;
+		return (x / .3048) / 5280 / 1000;
 }
 
 double CMto(std::string s, double x)
