@@ -10,13 +10,13 @@ This program will define any functions specific for the functionality of main.cp
 
 void abrvt(std::string& s)
 {
-	if (s == "millimeter")
+	if (s == "millimeters")
 		s = "mm";
-	if (s == "centimeter")
+	if (s == "centimeters")
 		s = "cm";
-	if (s == "meter")
+	if (s == "meters")
 		s = "m";
-	if (s == "kilometer")
+	if (s == "kilometers")
 		s = "km";
 }
 
@@ -29,7 +29,7 @@ std::string setType(std::string s)
 	if (s == "cm" || s == "mm" || s == "m" || s == "km")
 		return "length";
 
-	if (s == "inch" || s == "foot" || s == "mile")
+	if (s == "inches" || s == "feet" || s == "miles")
 		return "length";
 
 	return "ERROR";
