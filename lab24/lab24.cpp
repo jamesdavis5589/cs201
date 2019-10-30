@@ -43,7 +43,9 @@ int main()
 	}
 	std::cout << "\n\n";
 
+	//sorted vector
 	sort(darthjarjar.begin(), darthjarjar.end());
+
 	std::cout << "Sorted list:" << std::endl;
 	for (int sumn: darthjarjar)
 	{
