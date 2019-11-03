@@ -24,8 +24,8 @@ This program will
 int main(int argc, char **argv)
 {
 	//default dimensions of stuff
-	const int dh = 100;
-	const int dw = 300;
+	const int dh = 180;
+	const int dw = 340;
 
 	Fl_Window* window = new Fl_Window(dw, dh);
 	window->begin();
