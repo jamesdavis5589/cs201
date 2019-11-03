@@ -1,4 +1,4 @@
-// truncstruct.h
+// truncstruct.hpp
 // Glenn G. Chappell
 // 19 Mar 2018
 //

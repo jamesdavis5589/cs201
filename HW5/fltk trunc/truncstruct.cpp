@@ -10,7 +10,7 @@
 // Chris Hartman
 // For CS 201 Fall 2018
 
-#include "truncstruct.h"
+#include "truncstruct.hpp"
 // For struct StringInfo definition
 #include <string>
 using std::string;
