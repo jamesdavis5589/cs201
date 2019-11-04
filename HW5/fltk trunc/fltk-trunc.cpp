@@ -33,6 +33,17 @@ A label for output
 
 //h-position, v-position, width, height
 
+struct inout {
+	std::string input1 = nullptr;
+	std::string input2 = nullptr;
+
+	std::string op = nullptr;
+};
+
+inout input1;
+inout input2;
+inout op;
+
 void DefBox(Fl_Box* x)
 {
 	x->box(FL_UP_BOX);
@@ -46,11 +57,25 @@ void DefButt(Fl_Button* x)
 	x->labelsize(24);
 	x->labeltype(FL_SHADOW_LABEL);
 }
-/*
-void window_callback(Fl_Widget* widget, void*) {
+
+void window_callback(Fl_Widget* widget, void*) 
+{
 	if (fl_ask("Do you really want to exit?"))
 		((Fl_Window*)widget)->hide();
-		*/
+}
+
+
+//WORK IN PROGRESS!!!
+void callback2(Fl_Widget* widget, void*)
+{
+	StringInfo x = trunc8(input1);
+	op << x.str << std::endl;
+	op << x.len;
+}
+
+
+
+
 int main(int argc, char **argv)
 {
 	//default dimensions of objects
@@ -61,7 +86,7 @@ int main(int argc, char **argv)
 
 
 	Fl_Window* window = new Fl_Window(710, 600);
-	//window->callback(window_callback);
+	window->callback(window_callback);
 	window->begin();
 
 	//boxes
@@ -89,6 +114,10 @@ int main(int argc, char **argv)
 	Fl_Input* input2 = new Fl_Input(220, 140, bdw, bdh);
 
 	Fl_Output* output=new Fl_Output(220, 260, bdw, bdh);
+
+	//functionality
+	quitbutt->callback(window_callback);
+	truncbutt->callback(callback2);
 
 	window->end();
 
