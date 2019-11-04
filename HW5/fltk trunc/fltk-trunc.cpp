@@ -7,7 +7,7 @@ This program will
 */
 
 #pragma comment(lib, "fltk.lib")
-#pragma comment(lib, "commct123")
+#pragma comment(lib, "comctl32")
 
 #include <iostream>
 #include "truncstruct.hpp"
