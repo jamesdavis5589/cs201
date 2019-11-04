@@ -29,6 +29,7 @@ A label for output
 #include <FL/Fl_Input.H>
 #include <FL/Fl_Output.H>
 #include <FL/Fl_Button.H>
+#include <FL/fl_ask.H>
 
 //h-position, v-position, width, height
 
@@ -45,7 +46,11 @@ void DefButt(Fl_Button* x)
 	x->labelsize(24);
 	x->labeltype(FL_SHADOW_LABEL);
 }
-
+/*
+void window_callback(Fl_Widget* widget, void*) {
+	if (fl_ask("Do you really want to exit?"))
+		((Fl_Window*)widget)->hide();
+		*/
 int main(int argc, char **argv)
 {
 	//default dimensions of objects
@@ -56,8 +61,10 @@ int main(int argc, char **argv)
 
 
 	Fl_Window* window = new Fl_Window(710, 600);
+	//window->callback(window_callback);
 	window->begin();
 
+	//boxes
 	Fl_Box* title = new Fl_Box(10, 10, dw, dh, "FLTK Truncate");
 	Fl_Box* out = new Fl_Box(500, 280, dw, dh, "Output");
 	Fl_Box* in1 = new Fl_Box(500, 50, dw, dh, "Input");
@@ -65,17 +72,19 @@ int main(int argc, char **argv)
 	DefBox(out);
 	DefBox(in1);
 
-	Fl_Box* descr = new Fl_Box(10, 370, 690, 100, "Click on \"Quit\" to quit.\ntype an input into the \"Truncate\" field, then click \"Truncate\" to truncate the input");
-
+	//description box
+	Fl_Box* descr = new Fl_Box(10, 370, 690, 100, "Click on \"Quit\" to quit.\ntype an input into the \"Truncate\" field,\ndesired digits in the Main Input, then click \"Truncate\" to truncate the input");
 	descr->box(FL_UP_BOX);
 	descr->labelsize(20);
 	descr->labeltype(FL_SHADOW_LABEL);
 
+	//buttons
 	Fl_Button* truncbutt = new Fl_Button(10, 170, dw, dh, "Truncate");
 	Fl_Button* quitbutt = new Fl_Button(10, 300, dw, dh, "Quit");
 	DefButt(truncbutt);
 	DefButt(quitbutt);
 
+	//input/output boxes
 	Fl_Input* input1 = new Fl_Input(220, 30, bdw, bdh);
 	Fl_Input* input2 = new Fl_Input(220, 140, bdw, bdh);
 
