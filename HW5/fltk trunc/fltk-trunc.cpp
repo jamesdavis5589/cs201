@@ -3,7 +3,7 @@ James Davis
 CS201
 November 3rd
 HW5 - fltk-trunc.cpp
-This program will
+This program will truncate user input (now with HUD! :D)
 */
 
 /*
@@ -80,8 +80,6 @@ int main(int argc, char **argv)
 	Fl_Input* input2 = new Fl_Input(220, 140, bdw, bdh);
 
 	Fl_Output* output=new Fl_Output(220, 260, bdw, bdh);
-
-	
 
 	window->end();
 
