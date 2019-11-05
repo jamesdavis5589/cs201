@@ -41,4 +41,6 @@ StringInfo trunc(const StringInfo& stringInfo);
  */
 StringInfo trunc8(const std::string& str);
 
+StringInfo truncNo(const std::string& str, int f);
+
 #endif //#ifndef FILE_TRUNCSTRUCT_HPP_INCLUDED

@@ -21,6 +21,7 @@ A label for output
 
 #include <iostream>
 #include "truncstruct.hpp"
+#include <sstream>
 
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Widget.H>
@@ -34,15 +35,13 @@ A label for output
 //h-position, v-position, width, height
 
 struct inout {
-	std::string input1 = nullptr;
-	std::string input2 = nullptr;
+	Fl_Input* inp1 = nullptr;
+	Fl_Input* inp2 = nullptr;
 
-	std::string op = nullptr;
+	Fl_Output* op = nullptr;
 };
 
-inout input1;
-inout input2;
-inout op;
+inout io1;
 
 void DefBox(Fl_Box* x)
 {
@@ -64,17 +63,22 @@ void window_callback(Fl_Widget* widget, void*)
 		((Fl_Window*)widget)->hide();
 }
 
-
 //WORK IN PROGRESS!!!
 void callback2(Fl_Widget* widget, void*)
 {
-	StringInfo x = trunc8(input1);
-	op << x.str << std::endl;
-	op << x.len;
+	std::stringstream ss;
+		
+	ss << (io1.inp2->value());
+
+	int num;
+	num << ss;
+
+	StringInfo x = truncNo(io1.inp1->value(), num);
+	std::string op23; 
+	op23 = x.str << std::endl << x.len;
+
+	io1.op->value(op23.c_str());
 }
-
-
-
 
 int main(int argc, char **argv)
 {
@@ -110,10 +114,10 @@ int main(int argc, char **argv)
 	DefButt(quitbutt);
 
 	//input/output boxes
-	Fl_Input* input1 = new Fl_Input(220, 30, bdw, bdh);
-	Fl_Input* input2 = new Fl_Input(220, 140, bdw, bdh);
+	io1.inp1 = new Fl_Input(220, 30, bdw, bdh);
+	io1.inp2 = new Fl_Input(220, 140, bdw, bdh);
 
-	Fl_Output* output=new Fl_Output(220, 260, bdw, bdh);
+	io1.op = new Fl_Output(220, 260, bdw, bdh);
 
 	//functionality
 	quitbutt->callback(window_callback);
