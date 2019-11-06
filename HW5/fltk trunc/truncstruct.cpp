@@ -43,3 +43,8 @@ StringInfo trunc(const StringInfo& stringInfo) {
 StringInfo trunc8(const string& str) {
 	return trunc(StringInfo{ str, 8 });
 }
+
+//James
+StringInfo truncNo(const string& str, int f) {
+	return trunc(StringInfo{ str, f });
+}
