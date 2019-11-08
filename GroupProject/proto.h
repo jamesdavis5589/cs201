@@ -9,7 +9,7 @@ This program will serve as a central hub for all of the functions we create and 
 #ifndef proto_H
 #define proto_H
 
-//#pragma comment(lib, "fltk.lib")
+#pragma comment(lib, "fltk.lib")
 
 #include <string>
 #include <iostream>
