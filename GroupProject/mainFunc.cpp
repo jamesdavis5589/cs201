@@ -1,5 +1,5 @@
 /*
-James davis and Alex Frania
+James davis and Sarah Carter
 CS201
 October 3rd
 Group Project 1 - tempFunc.h

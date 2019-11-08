@@ -1,12 +1,13 @@
 /*
-James davis and Alex Frania
+James davis and Sarah Carter
 CS201
 October 3rd
 Group Project 1 - proto.h
 This program will serve as a central hub for all of the functions we create and use
 */
 
-#pragma once
+#ifndef proto_H
+#define proto_H
 
 #include <string>
 #include <iostream>
@@ -29,8 +30,12 @@ double inchto(std::string s, double x);
 double footto(std::string s, double x);
 double mileto(std::string s, double x);
 
-//NOTE: I want to set it so that each type has a central unit, which all other units in that type convert to first before
-//switching to other types
+/*
+IDEAS:
 
-//EXAMPLE: All imperical units will switch to (inches) before transferring to the metric system, and all metrics will convert
-//to centimeters before switching to imperial
+Add FLTK interface
+Time conversions
+Make conversions easier/safer, e.g: spelling error protection
+*/
+
+#endif
