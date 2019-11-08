@@ -9,6 +9,8 @@ This program will serve as a central hub for all of the functions we create and 
 #ifndef proto_H
 #define proto_H
 
+//#pragma comment(lib, "fltk.lib")
+
 #include <string>
 #include <iostream>
 
@@ -33,7 +35,7 @@ double mileto(std::string s, double x);
 /*
 IDEAS:
 
-Add FLTK interface
+Add FLTK interface, can FLTK be included within project, so it doesn't need to be added on new computers?
 Time conversions
 Make conversions easier/safer, e.g: spelling error protection
 */

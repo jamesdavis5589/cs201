@@ -20,6 +20,8 @@ double Cto(std::string s, double x)
 	//to Farenheit
 	if (s[0] == 'f')
 		return x * (9 / 5) + 32;
+
+	return 0;
 }
 
 double Kto(std::string s, double x)
@@ -31,6 +33,8 @@ double Kto(std::string s, double x)
 	//to farenheit
 	if (s[0] == 'f')
 		return (x - 273.15) * (9 / 5) + 32;
+
+	return 0;
 }
 
 double Fto(std::string s, double x)
@@ -42,4 +46,6 @@ double Fto(std::string s, double x)
 	//to kelvin
 	if (s[0] == 'k')
 		return (x - 32) / (9 / 5) - 273.15;
+
+	return 0;
 }
