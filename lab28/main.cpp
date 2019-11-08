@@ -44,16 +44,16 @@ void additional()
 	std::shuffle(vec.begin(), vec.end(), x);
 
 	//Print to document
-	int count = 1;
+	int count2 = 0;
 	std::ofstream of("SECOND_DOCUMENT.txt");
 
 	for (int i = 0; i < 10; i++)
 	{
 		for (int k = 0; k < 10; k++)
 		{
-			of << count << " ";
+			of << vec[count2] << " ";
 
-			count++;
+			count2++;
 		}
 
 		of << std::endl;
