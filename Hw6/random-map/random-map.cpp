@@ -12,6 +12,34 @@ This program will
 #include <map>
 #include <random>
 #include <cmath>
+#include <utility>
+#include <algorithm>
+
+using std::random_device;
+using std::mt19937;
+using std::uniform_int_distribution;
+using std::normal_distribution;
+
+int RandomBetweenU(int first, int last)
+{
+	random_device ran;
+	mt19937 gen(ran);
+	uniform_int_distribution<int> dis(first, last);
+	return dis(gen);
+}
+
+int RandomBetweenN(int first, int last)
+{
+	random_device ran;
+	mt19937 gen(ran);
+	normal_distribution<int> dis(first, last);
+	return dis(gen);
+}
+
+int RandomBetween(int first, int last)
+{
+	return rand() % last + first;
+}
 
 int main()
 {
