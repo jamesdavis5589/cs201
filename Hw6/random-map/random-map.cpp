@@ -19,13 +19,16 @@ using std::random_device;
 using std::mt19937;
 using std::uniform_int_distribution;
 using std::normal_distribution;
+using std::map;
+using std::cout;
+using std::endl;
 
 int RandomBetweenU(int first, int last)
 {
 	random_device ran;
 	mt19937 gen(ran);
 	uniform_int_distribution<int> dis(first, last);
-	return dis(gen);
+	return dis(ran);
 }
 
 int RandomBetweenN(int first, int last)
@@ -41,8 +44,28 @@ int RandomBetween(int first, int last)
 	return rand() % last + first;
 }
 
+void PrintDistribution(const map<int, int> &numbers, int min, int max)
+{
+	//first histograph
+	for (int i = max; i < min; i--)
+	{
+		for (auto x : numbers)
+		{
+			if (*x.first() == i)
+			{
+				cout << "*";
+			}
+		}
+		cout << endl;
+	}
+
+	//second histograph
+	
+}
+
 int main()
 {
+	/*
 	// Seed with a real random value, if available
 	std::random_device r;
 
@@ -66,4 +89,21 @@ int main()
 		std::cout << std::fixed << std::setprecision(1) << std::setw(2)
 			<< p.first << ' ' << std::string(p.second / 200, '*') << '\n';
 	}
+	*/
+
+	
+	map<int, int> box;
+
+	int min = 3;
+	int max = 9;
+
+	for (int q = 0; q < 200; q++)
+	{
+		int t1 = RandomBetweenN(min, max);
+		int t2 = RandomBetween(min, max);
+
+		box[t1] = t2;
+	}
+
+
 }
