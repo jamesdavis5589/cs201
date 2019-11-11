@@ -28,9 +28,12 @@ using std::ifstream;
 using std::string;
 #include <sstream>
 using std::istringstream;
+#include <vector>
+using std::vector;
+#include <ios>
 
 // Set the following to true to create formatting errors in the file.
-const bool MAKE_FILE_ERRORS = false;
+const bool MAKE_FILE_ERRORS = true;
 
 /**
  * Read a file and print it to the console.
@@ -63,6 +66,29 @@ bool readFile1(const string& filename) {
 	//       Print each line of the file,
 	//         but print ERROR: in front of
 	//         lines with strings.
+
+	ifstream human(filename);
+	string s;
+	bool er = false;
+
+	if (!human)
+	{
+		return false;
+	}
+
+	while (!er)
+	{
+		getline(human, s);
+
+		if (human.eof())
+		{
+			er = true;
+		}
+		else
+		{
+			cout << s << endl;
+		}
+	}
 
 	cout << filename;  // DUMMY output
 	return false;  // DUMMY return
