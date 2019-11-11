@@ -12,9 +12,6 @@ This program will host important stuff, such as the super secret answer
 #include <string>
 #include <vector>
 #include <iostream>
-#include <algorithm> 
-#include <sstream> 
-#include <iterator> 
 
 using std::string;
 using std::vector;
@@ -25,7 +22,8 @@ using std::to_string;
 
 
 string word = "orangutan"; //don't tell anybody
-vector<char>letters; //letters in word
+vector<char> letters; //letters in word
+vector<char> wordlet; //characters of the word
 vector<char> got; //letters guessed correctly
 
 
@@ -67,16 +65,18 @@ auto check = [](char c)
 	}
 };
 
-//prints out current progress of word
-auto print = []()
+//creates a vecotr of the chars of the word for use in functions
+auto SetWordChars = []()
 {
-	vector<char> wordlet;
-
 	for (int i = 0; i < word.size(); i++)
 	{
 		wordlet.push_back(word[i]);
 	}
+};
 
+//prints out current progress of word
+auto print = []()
+{
 	for (char c : got)
 	{
 		for (char c2 : wordlet)
@@ -95,12 +95,6 @@ auto print = []()
 auto cword = []()
 {
 	vector<char> current;
-	vector<char> wordlet;
-
-	for (int i = 0; i < word.size(); i++)
-	{
-		wordlet.push_back(word[i]);
-	}
 
 	for (char c : got)
 	{
@@ -117,6 +111,18 @@ auto cword = []()
 	string s(current.begin(), current.end());
 
 	return s;
+};
+
+auto SetNewChars = [](string s)
+{
+	vector<char> nc;
+
+	for (int i = 0; i < s.size(); i++)
+	{
+		nc.push_back(s[i]);
+	}
+
+	return nc;
 };
 
 #endif 

@@ -10,10 +10,11 @@ This program will play hangman, using lambda functions
 
 int main()
 {
-	bool win = false;
+	bool win;
 	char input;
 
 	SetLet;
+	SetWordChars;
 
 	//Turn
 	for (int i = 0; i < 10; i++)
@@ -24,11 +25,10 @@ int main()
 		check;
 		print;
 
-		
-
 		cout << endl;
-		/*
-		if (cword == word)
+	
+		//set perameters
+		if (win==true)
 		{
 			cout << "Yay, you won!" << endl;
 			break;
@@ -37,6 +37,6 @@ int main()
 		if (i = 9)
 		{
 			cout << "Well, you lost =/";
-		}*/
+		}
 	}
 }
