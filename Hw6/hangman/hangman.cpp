@@ -21,6 +21,22 @@ int main()
 		cout << "What letter now? ";
 		cin >> input;
 
+		check;
+		print;
 
+		
+
+		cout << endl;
+		/*
+		if (cword == word)
+		{
+			cout << "Yay, you won!" << endl;
+			break;
+		}
+
+		if (i = 9)
+		{
+			cout << "Well, you lost =/";
+		}*/
 	}
 }
