@@ -2,213 +2,257 @@
 James davis and Sarah Carter
 CS201
 October 3rd
-Group Project 1 - tempFunc.h
+Group Project - lengthFunc.h
 This program will hold the conversion functions regarding lengths
 */
 
 #include "proto.h"
 
+string LengthError = "Length Unit Error";
+
 //Metric
-double Mto(std::string s, double x)
+double Mto(int t, double x)
 {
+	if (t < 4 || t > 10)
+	{
+		cout << LengthError;
+		return 0;
+	}
+
 	//to millimeters
-	if (s == "mm")
-		return .001 * x;
+	if (t == 4)
+		return x * 1000;
 
 	//to centimeters
-	if (s == "cm")
-		return .01 * x;
+	if (t == 5)
+		return 100 * x;
 
 	//to kilometers
-	if (s == "km")
-		return 1000 * x;
+	if (t == 7)
+		return x / 1000;
 
 	//to inches
-	if (s == "inches")
+	if (t == 8)
 		return (x / .3048) / 12;
 
 	//to feet
-	if (s == "feet")
+	if (t == 9)
 		return x / .3048;
 
 	//to miles
-	if (s == "miles")
-		return (x / .3048) * 5280;
+	if (t == 10)
+		return (x / .3048) / 5280;
 
 	return 0;
 }
 
-double MMto(std::string s, double x)
+double MMto(int t, double x)
 {
+	if (t < 4 || t > 10)
+	{
+		cout << LengthError;
+		return 0;
+	}
+
 	//to centimeters
-	if (s == "cm")
-		return x * 10;
+	if (t == 5)
+		return x / 10;
 
 	//to meters
-	if (s == "m")
-		return x * 1000;
+	if (t == 6)
+		return x / 1000;
 
 	//to kilometers
-	if (s == "km")
-		return (x * 1000) * 1000;
+	if (t == 7)
+		return (x / 1000) / 1000;
 
 	//to inches
-	if (s == "inches")
-		return (x / .3048) / 12 / 1000;
+	if (t == 8)
+		return (x / .3048) * 12 / 1000;
 
 	//to feet
-	if (s == "feet")
+	if (t == 9)
 		return x / .3048 / 1000;
 
 	//to miles
-	if (s == "miles")
+	if (t == 10)
 		return (x / .3048) / 5280 / 1000;
 
 	return 0;
 }
 
-double CMto(std::string s, double x)
+double CMto(int t, double x)
 {
+	if (t < 4 || t > 10)
+	{
+		cout << LengthError;
+		return 0;
+	}
+
 	//to millimeters
-	if (s == "mm")
-		return x / 10;
+	if (t == 4)
+		return x * 10;
 
 	//to meters
-	if (s == "m")
-		return x * 100;
+	if (t == 6)
+		return x / 100;
 
 	//to kilometers
-	if (s == "km")
-		return (x * 100) * 1000;
+	if (t == 7)
+		return (x / 100) / 1000;
 
 	//to inches
-	if (s == "inches")
-		return ((x / .3048) * 100) / 12;
+	if (t == 8)
+		return ((x / .3048) / 100) * 12;
 
 	//to feet
-	if (s == "feet")
-		return (x / .3048) * 100;
+	if (t == 9)
+		return (x / .3048) / 100;
 
 	//to miles
-	if (s == "miles")
-		return ((x / .3048) * 100) * 5280;
+	if (t == 10)
+		return ((x / .3048) / 100) / 5280;
 
 	return 0;
 }
 
-double KMto(std::string s, double x)
+double KMto(int t, double x)
 {
+	if (t < 4 || t > 10)
+	{
+		cout << LengthError;
+		return 0;
+	}
+
 	//to millimeters
-	if (s == "mm")
-		return (x / 1000) / 1000;
+	if (t == 4)
+		return (x * 1000) * 1000;
 
 	//to centimeters
-	if (s == "cm")
-		return (x / 1000) / 100;
+	if (t == 5)
+		return (x * 1000) * 100;
 
 	//to meters
-	if (s == "m")
-		return x / 1000;
+	if (t == 6)
+		return x * 1000;
 
 	//to inches
-	if (s == "inches")
-		return ((x / .3048) / 1000) / 12;
+	if (t == 8)
+		return ((x / .3048) * 1000) * 12;
 
 	//to feet
-	if(s=="feet")
-		return (x / .3048) / 1000;
+	if(t == 9)
+		return (x / .3048) * 1000;
 
 	//to miles
-	if (s == "miles")
-		return ((x / .3048) / 1000) * 5280;
+	if (t == 10)
+		return ((x / .3048) * 1000) / 5280;
 
 	return 0;
 }
 
 //Imperial
-double inchto(std::string s, double x)
+double inchto(int t, double x)
 {
+	if (t < 4 || t > 10)
+	{
+		cout << LengthError;
+		return 0;
+	}
+
 	//to foot
-	if (s == "inches")
-		return x * 12;
-
-	//to mile
-	if (s == "miles")
-		return x * 12 * 5280;
-
-	//to millimeters
-	if (s == "mm")
-		return (x * .3048) * 12 / 1000;
-
-	//to centimeters
-	if(s=="cm")
-		return (x * .3048) * 12 / 100;
-
-	//to meters
-	if (s == "m")
-		return (x * .3048) * 12;
-
-	//to kilometers
-	if(s=="km")
-		return (x * .3048) * 12 * 1000;
-
-	return 0;
-}
-
-double footto(std::string s, double x)
-{
-	//to inch
-	if (s == "inch")
+	if (t == 9)
 		return x / 12;
 
 	//to mile
-	if (s == "mile")
-		return x * 5280;
+	if (t == 10)
+		return x / 12 / 5280;
 
 	//to millimeters
-	if (s == "mm")
-		return (x * .3048) / 1000;
+	if (t == 4)
+		return (x * .3048) * 12 / 1000;
 
 	//to centimeters
-	if (s == "cm")
-		return (x * .3048) / 100;
+	if(t == 5)
+		return (x * .3048) / 12 * 100;
 
 	//to meters
-	if (s == "m")
-		return x * .3048;
+	if (t == 6)
+		return (x * .3048) / 12;
 
 	//to kilometers
-	if (s == "km")
-		return (x * .3048) * 1000;
+	if(t == 7)
+		return (x * .3048) / 12 / 1000;
 
 	return 0;
 }
 
-double mileto(std::string s, double x)
+double footto(int t, double x)
 {
-	//to inch
-	if (s == "inches")
-		return (x / 5280) / 12;
+	if (t < 4 || t > 10)
+	{
+		cout << LengthError;
+		return 0;
+	}
 
-	//to feet
-	if (s == "feet")
+	//to inch
+	if (t == 8)
+		return x * 12;
+
+	//to mile
+	if (t == 10)
 		return x / 5280;
 
 	//to millimeters
-	if (s == "mm")
-		return ((x / 5280) * .3048) / 1000;
+	if (t == 4)
+		return (x * .3048) * 1000;
 
 	//to centimeters
-	if (s == "cm")
-		return ((x / 5280) * .3048) / 100;
+	if (t == 5)
+		return (x * .3048) * 100;
 
 	//to meters
-	if (s == "m")
-		return (x / 5280) * .3048;
+	if (t == 6)
+		return x * .3048;
 
 	//to kilometers
-	if (s == "km")
-		return (x * .3048) * 1000;
+	if (t == 7)
+		return (x * .3048) / 1000;
+
+	return 0;
+}
+
+double mileto(int t, double x)
+{
+	if (t < 4 || t > 10)
+	{
+		cout << LengthError;
+		return 0;
+	}
+
+	//to inch
+	if (t == 8)
+		return (x * 5280) * 12;
+
+	//to feet
+	if (t == 9)
+		return x * 5280;
+
+	//to millimeters
+	if (t == 4)
+		return ((x * 5280) * .3048) * 1000;
+
+	//to centimeters
+	if (t == 5)
+		return ((x * 5280) * .3048) * 100;
+
+	//to meters
+	if (t == 6)
+		return (x * 5280) * .3048;
+
+	//to kilometers
+	if (t == 7)
+		return (x * .3048) / 1000;
 
 	return 0;
 }
