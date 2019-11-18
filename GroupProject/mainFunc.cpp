@@ -2,12 +2,13 @@
 James davis and Sarah Carter
 CS201
 October 3rd
-Group Project 1 - tempFunc.h
+Group Project - tempFunc.h
 This program will define any functions specific for the functionality of main.cpp
 */
 
 #include "proto.h"
 
+//no longer needed
 void abrvt(std::string& s)
 {
 	if (s == "millimeters")
@@ -20,6 +21,7 @@ void abrvt(std::string& s)
 		s = "km";
 }
 
+//change to int types instead of string checks
 std::string setType(std::string s)
 {
 	if (s[0] == 'f' || s[0] == 'c' || s[0] == 'k')

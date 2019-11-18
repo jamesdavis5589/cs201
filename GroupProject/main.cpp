@@ -2,11 +2,13 @@
 James davis and Sarah Carter
 CS201
 October 3rd
-Group Project 1 - main.cpp
+Group Project - main.cpp
 This program will utilise and implement functions created in the header files
 */
 
 #include "proto.h"
+
+//DUE TO CHANGES WITH FUNCTIONS, MAIN MAY NO LONGER WORK, AND MAY NEED TO BE MODIFIED AS WELL
 
 int main()
 {
