@@ -17,9 +17,16 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+struct unit{
+    string from;
+    string to;
+    double qty;
+};
+
 //main
-void abrvt(std::string& s);
-std::string setType(std::string s);
+int UnitToCode(const unit &info);
+int UnitFromCode(const unit &info);
+std::string setType(const unit& info, std::string s);
 
 //temperature
 double Cto(int t, double x);
