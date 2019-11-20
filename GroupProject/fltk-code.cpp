@@ -12,13 +12,17 @@
 #include <FL/Fl_Output.H>
 #include <FL/Fl_Widget.H>
 #include <FL/Fl_Button.H>
+#include <FL/Fl_Menu_Button.H>
+#include <FL/Fl_Input_Choice.H>
 #include <sstream>
 
 #include "fltk-code.hpp"
 #include "proto.h"
 
-Fl_Input* fromUnit = nullptr;
-Fl_Input* toUnit = nullptr;
+Fl_Menu_Button* cFromBut = nullptr;
+Fl_Menu_Button* cToBut = nullptr;
+Fl_Input_Choice* fromUnit = nullptr;
+Fl_Input_Choice* toUnit = nullptr;
 Fl_Input* unitQty = nullptr;
 Fl_Output* result = nullptr;
 Fl_Button* convert = nullptr;
@@ -26,46 +30,49 @@ Fl_Button* quit = nullptr;
 
 unit info;
 
-Fl_Menu_Item MainMenu[] = {
-    {"&Convert From", 0, 0, 0, FL_SUBMENU},
-        {"&Millimeters", 0, 0},
-        {"&Centimeters", 0, 0},
-        {"&Meters", 0, 0},
-        {"&Kilometers", 0, 0},
-        {"&Inches", 0, 0},
-        {"&Feet", 0, 0},
-        {"&Miles", 0, 0},
-        {"&Fahrenheit", 0, 0},
-        {"&Celsius", 0, 0},
-        {"&Kelvin", 0, 0},
-        {0},
-    {"&Convert To", 0, 0, 0, FL_SUBMENU},
-        {"&Millimeters", 0, 0},
-        {"&Centimeters", 0, 0},
-        {"&Meters", 0, 0},
-        {"&Kilometers", 0, 0},
-        {"&Inches", 0, 0},
-        {"&Feet", 0, 0},
-        {"&Miles", 0, 0},
-        {"&Fahrenheit", 0, 0},
-        {"&Celsius", 0, 0},
-        {"&Kelvin", 0, 0},
-        {0}
-};
-
 void cFromChanged_cb(Fl_Widget* f, void* data){
-    Fl_Input* fromUnit = (Fl_Input*)f;
+    Fl_Input_Choice* fromUnit = (Fl_Input_Choice*)f;
     std::string fUn = fromUnit->value();
     std::istringstream fstr(fUn);
     fstr >> info.from;
 }
 
 void cToChanged_cb(Fl_Widget* t, void* data){
-    Fl_Input* toUnit = (Fl_Input*)t;
+    Fl_Input_Choice* toUnit = (Fl_Input_Choice*)t;
     std::string tUn = toUnit->value();
     std::istringstream tstr(tUn);
     tstr >> info.to;
 }
+
+Fl_Menu_Item MainFromMenu[] = {
+    {"Convert From", 0, 0, 0, FL_SUBMENU},
+        {"Millimeters", 0, 0},
+        {"Centimeters", 0, 0},
+        {"Meters", 0, 0},
+        {"Kilometers", 0, 0},
+        {"Inches", 0, 0},
+        {"Feet", 0, 0},
+        {"Miles", 0, 0},
+        {"Fahrenheit", 0, 0},
+        {"Celsius", 0, 0},
+        {"Kelvin", 0, 0},
+        {0}
+};
+Fl_Menu_Item MainToMenu[] = {
+    {"Convert To", 0, 0, 0, FL_SUBMENU},
+        {"Millimeters", 0, 0},
+        {"Centimeters", 0, 0},
+        {"Meters", 0, 0},
+        {"Kilometers", 0, 0},
+        {"Inches", 0, 0},
+        {"Feet", 0, 0},
+        {"Miles", 0, 0},
+        {"Fahrenheit", 0, 0},
+        {"Celsius", 0, 0},
+        {"Kelvin", 0, 0},
+        {0}
+};
+
 
 void cQtyChanged_cb(Fl_Widget* q, void* data){
     Fl_Input* unitQty = (Fl_Input*)q;
@@ -135,21 +142,23 @@ Fl_Window* CreateWindow(){
     Fl_Window* window = new Fl_Window(640, 270, "Unit Conversion");
     window->begin();
     
-    fromUnit = new Fl_Input(150, 70, 150, 20, "Convert From");
-    toUnit = new Fl_Input(400, 70, 150, 20, "Convert To");
+    fromUnit = new Fl_Input_Choice(150, 70, 150, 20, "Convert From");
+    toUnit = new Fl_Input_Choice(400, 70, 150, 20, "Convert To");
+    cFromBut = fromUnit->menubutton();
+    cToBut = toUnit->menubutton();
     unitQty = new Fl_Input(270, 110, 100, 20, "Quantity to Convert");
     convert = new Fl_Button(270, 150, 100, 20, "Convert");
     result = new Fl_Output(160, 190, 320, 20, "Result");
     quit = new Fl_Button(270, 240, 100, 20, "Exit");
     
+    cFromBut->copy(MainFromMenu);
+    cToBut->copy(MainToMenu);
     fromUnit->callback(cFromChanged_cb);
     toUnit->callback(cToChanged_cb);
     unitQty->callback(cQtyChanged_cb);
     convert->callback(OnConvertClicked_cb, (void*)&info);
     quit->callback(OnExitClicked_cb, (void*)window);
     
-    Fl_Menu_Bar* menubar = new Fl_Menu_Bar(225, 30, 190, 20);
-    menubar->copy(MainMenu);
     
     window->end();
     

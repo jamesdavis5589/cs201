@@ -13,25 +13,25 @@ int UnitToCode(const unit &info)
 {
     std::string to = info.to;
     int codeTo = 0;
-    if (to == "fahrenheit")
+    if (to == "Fahrenheit")
         codeTo = 1;
-    if (to == "celsius")
+    if (to == "Celsius")
         codeTo = 2;
-    if (to == "kelvin")
+    if (to == "Kelvin")
         codeTo = 3;
-	if (to == "millimeters")
+	if (to == "Millimeters")
 		codeTo = 4;
-	if (to == "centimeters")
+	if (to == "Centimeters")
 		codeTo = 5;
-	if (to == "meters")
+	if (to == "Meters")
 		codeTo = 6;
-	if (to == "kilometers")
+	if (to == "Kilometers")
 		codeTo = 7;
-    if (to == "inches")
+    if (to == "Inches")
         codeTo = 8;
-    if (to == "feet")
+    if (to == "Feet")
         codeTo = 9;
-    if (to == "miles")
+    if (to == "Miles")
         codeTo = 10;
     return codeTo;
 }
@@ -39,25 +39,25 @@ int UnitToCode(const unit &info)
 int UnitFromCode(const unit &info){
     std::string from = info.from;
     int codeF = 0;
-    if (from == "fahrenheit")
+    if (from == "Fahrenheit")
         codeF = 1;
-    if (from == "celsius")
+    if (from == "Celsius")
         codeF = 2;
-    if (from == "kelvin")
+    if (from == "Kelvin")
         codeF = 3;
-    if (from == "millimeters")
+    if (from == "Millimeters")
         codeF = 4;
-    if (from == "centimeters")
+    if (from == "Centimeters")
         codeF = 5;
-    if (from == "meters")
+    if (from == "Meters")
         codeF = 6;
-    if (from == "kilometers")
+    if (from == "Kilometers")
         codeF = 7;
-    if (from == "inches")
+    if (from == "Inches")
         codeF = 8;
-    if (from == "feet")
+    if (from == "Feet")
         codeF = 9;
-    if (from == "miles")
+    if (from == "Miles")
         codeF = 10;
     return codeF;
 }
