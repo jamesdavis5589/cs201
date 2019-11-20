@@ -1,5 +1,5 @@
 /*
-James davis and Alex Frania
+James davis and Sarah Carter
 CS201
 October 3rd
 Group Project 1 - tempFunc.h
@@ -8,38 +8,62 @@ This program will hold the conversion functions regarding temperature
 
 #include "proto.h"
 
-//Checks first letter to mitigate spelling errors, then carries out conversion
+string TempError = "Temperature Unit Error";
 
 //Temperature
-double Cto(std::string s, double x)
+double Cto(int t, double x)
 {
+	if (t > 3)
+	{
+		cout << TempError;
+		return 0;
+	}
+
 	//to kelvin
-	if (s[0] == 'k')
+	if (t == 3)
 		return x + 273.15;
 
 	//to Farenheit
-	if (s[0] == 'f')
+	if (t == 1)
 		return x * (9 / 5) + 32;
+
+	return 0;
 }
 
-double Kto(std::string s, double x)
+double Kto(int t, double x)
 {
+	if (t > 3)
+	{
+		cout << TempError;
+		return 0;
+	}
+
 	//to celsius
-	if (s[0] == 'c')
+	if (t == 2)
 		return x - 273.15;
 
 	//to farenheit
-	if (s[0] == 'f')
+	if (t == 1)
 		return (x - 273.15) * (9 / 5) + 32;
+
+	return 0;
 }
 
-double Fto(std::string s, double x)
+double Fto(int t, double x)
 {
+	if (t > 3)
+	{
+		cout << TempError;
+		return 0;
+	}
+
 	//to celsius
-	if (s[0] == 'c')
+	if (t == 2)
 		return (x - 32) / (9 / 5);
 
 	//to kelvin
-	if (s[0] == 'k')
+	if (t == 3)
 		return (x - 32) / (9 / 5) - 273.15;
+
+	return 0;
 }

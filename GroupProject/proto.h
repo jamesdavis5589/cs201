@@ -1,36 +1,69 @@
 /*
-James davis and Alex Frania
+James davis and Sarah Carter
 CS201
 October 3rd
-Group Project 1 - proto.h
+Group Project - proto.h
 This program will serve as a central hub for all of the functions we create and use
 */
 
-#pragma once
+#ifndef proto_H
+#define proto_H
 
 #include <string>
 #include <iostream>
 
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+struct unit{
+    string from;
+    string to;
+    double qty;
+};
+
 //main
-void abrvt(std::string& s);
-std::string setType(std::string s);
+int UnitToCode(const unit &info);
+int UnitFromCode(const unit &info);
+std::string setType(const unit& info, std::string s);
 
 //temperature
-double Cto(std::string s, double x);
-double Kto(std::string s, double x);
-double Fto(std::string s, double x);
+double Cto(int t, double x);
+double Kto(int t, double x);
+double Fto(int t, double x);
 
 //length
-double Mto(std::string s, double x);
-double CMto(std::string s, double x);
-double MMto(std::string s, double x);
-double KMto(std::string s, double x);
-double inchto(std::string s, double x);
-double footto(std::string s, double x);
-double mileto(std::string s, double x);
+double Mto(int t, double x);
+double CMto(int t, double x);
+double MMto(int t, double x);
+double KMto(int t, double x);
+double inchto(int t, double x);
+double footto(int t, double x);
+double mileto(int t, double x);
 
-//NOTE: I want to set it so that each type has a central unit, which all other units in that type convert to first before
-//switching to other types
+/*
+IDEAS:
 
-//EXAMPLE: All imperical units will switch to (inches) before transferring to the metric system, and all metrics will convert
-//to centimeters before switching to imperial
+Add FLTK interface, can FLTK be included within project, so it doesn't need to be added on new computers?
+Time conversions
+*/
+
+/*
+UNITS:
+
+Farenheit - 1
+Celsius - 2
+Kelvin - 3
+
+Millimeters - 4
+Centimeters - 5
+Meters - 6
+Kilometers - 7
+
+Inches - 8
+Feet - 9
+Miles - 10
+*/
+
+#endif
