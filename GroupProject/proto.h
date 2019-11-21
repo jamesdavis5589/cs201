@@ -11,15 +11,22 @@ This program will serve as a central hub for all of the functions we create and 
 
 #include <string>
 #include <iostream>
+#include <vector>
 
 using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
+using std::vector;
+
+vector<string> units {
+"Farenheit", "Celsius", "Kelvin",
+"Millimeters", "Centimeters", "Meters", "Kilometers",
+"Inches", "Feet", "Miles"
+};
 
 //main
-void abrvt(std::string& s);
-std::string setType(std::string s);
+void printChart();
 
 //temperature
 double Cto(int t, double x);

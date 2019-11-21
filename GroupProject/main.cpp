@@ -12,74 +12,29 @@ This program will utilise and implement functions created in the header files
 
 int main()
 {
-	std::string unin;
-	std::string unout;
+	//Vector Units is now preallocated in proto.h
+	/*
+	units.push_back("Farenheit");
+	units.push_back("Celsius");
+	units.push_back("Kelvin");
 
-	double tin;
-	double tout;
+	units.push_back("Millimeters");
+	units.push_back("Centimeters");
+	units.push_back("Meters");
+	units.push_back("Kilometers");
+	units.push_back("Inches");
+	units.push_back("Feet");
+	units.push_back("Miles");
+	*/
+	int unin;
+	int unout;
 
-	char check;
-	std::string type1;
-	std::string type2;
+	printChart();
+	cout << "\nAbove are listings of available units along with their correlating integers" << endl;
+	cout << "Please use the appropriate integers for selecting units to convert\n" << endl;
 
-	//unit inputs
-	std::cout << "What would your input UNITS be?\n";
-	std::cin >> unin;
-	std::cout << "What unit would you like to convert to?\n";
-	std::cin >> unout;
-
-	//checking
-	std::cout << "You are converting " << unin << " to " << unout << ", right? (y/n)\n";
-	std::cin >> check;
-	if (check == 'n')
-	{
-		std::cout << "Okay then, restarting...\n\n\n\n\n\n\n";
-		main();
-	}
-
-	//abbreviating if possible
-	std::string cp = unin;
-	std::string cp2 = unout;
-	abrvt(unin);
-	abrvt(unout);
-
-	//establishing type set
-	type1 = setType(unin);
-	type2 = setType(unout);
-
-	/*if (type1 != type2 || type1 == "ERROR")
-	{
-		std::cout << "ERROR: Unit types do not match, please try again\n\n\n\n\n\n\n";
-		main();
-	}*/
-
-	//conversion time!
-	std::cout << "How many " << unin << " are you converting into " << unout << "?\n";
-	std::cin >> tin;
-
-	if (unin[0] == 'f')
-		tout = Fto(unout, tin);
-	else if(unin[0] == 'c')
-		tout = Cto(unout, tin);
-	else if(unin[0] == 'k')
-		tout = Kto(unout, tin);
-
-	if (unin == "cm")
-		tout = CMto(unout, tin);
-	else if (unin == "mm")
-		tout = MMto(unout, tin);
-	else if (unin == "m")
-		tout = Mto(unout, tin);
-	else if (unin == "km")
-		tout = KMto(unout, tin);
-
-
-	if (unin == "inches")
-		tout = inchto(unout, tin);
-	if (unin == "feet")
-		tout = footto(unout, tin);
-	if (unin == "miles")
-		tout = mileto(unout, tin);
-
-	std::cout << tin << " " << unin << " is equal to " << tout << " " << unout << "\n\n\n";
+	cout << "You are converting ___ \n";
+	cin >> unin;
+	cout << "...into ___ \n";
+	cin >> unout;
 }

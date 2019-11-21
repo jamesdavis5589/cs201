@@ -8,31 +8,18 @@ This program will define any functions specific for the functionality of main.cp
 
 #include "proto.h"
 
-//no longer needed
-void abrvt(std::string& s)
+//Prints out available units with their correlating integers
+void printChart()
 {
-	if (s == "millimeters")
-		s = "mm";
-	if (s == "centimeters")
-		s = "cm";
-	if (s == "meters")
-		s = "m";
-	if (s == "kilometers")
-		s = "km";
-}
+	cout << "Temperatures:" << endl;
 
-//change to int types instead of string checks
-std::string setType(std::string s)
-{
-	if (s[0] == 'f' || s[0] == 'c' || s[0] == 'k')
-		return "temp";
+	for (int i = 1; i <= 10; i++)
+	{
+		cout << units[i - 1] << " - " << i << endl;
 
-
-	if (s == "cm" || s == "mm" || s == "m" || s == "km")
-		return "length";
-
-	if (s == "inches" || s == "feet" || s == "miles")
-		return "length";
-
-	return "ERROR";
+		if (i == 4)
+		{
+			cout << "\nLengths:" << endl;
+		}
+	}
 }
