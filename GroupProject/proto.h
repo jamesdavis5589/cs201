@@ -11,22 +11,22 @@ This program will serve as a central hub for all of the functions we create and 
 
 #include <string>
 #include <iostream>
-#include <vector>
 
 using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
-using std::vector;
 
-vector<string> units {
-"Farenheit", "Celsius", "Kelvin",
-"Millimeters", "Centimeters", "Meters", "Kilometers",
-"Inches", "Feet", "Miles"
+struct unit{
+    string from;
+    string to;
+    double qty;
 };
 
 //main
-void printChart();
+int UnitToCode(const unit &info);
+int UnitFromCode(const unit &info);
+std::string setType(const unit& info, std::string s);
 
 //temperature
 double Cto(int t, double x);
