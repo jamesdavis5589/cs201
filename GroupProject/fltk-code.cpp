@@ -15,6 +15,7 @@
 #include <FL/Fl_Menu_Button.H>
 #include <FL/Fl_Input_Choice.H>
 #include <sstream>
+#include <map>
 
 #include "fltk-code.hpp"
 #include "proto.h"
@@ -44,33 +45,17 @@ void cToChanged_cb(Fl_Widget* t, void* data){
     tstr >> info.to;
 }
 
-Fl_Menu_Item MainFromMenu[] = {
-    {"Convert From", 0, 0, 0, FL_SUBMENU},
-        {"Millimeters", 0, 0},
-        {"Centimeters", 0, 0},
-        {"Meters", 0, 0},
-        {"Kilometers", 0, 0},
-        {"Inches", 0, 0},
-        {"Feet", 0, 0},
-        {"Miles", 0, 0},
-        {"Fahrenheit", 0, 0},
-        {"Celsius", 0, 0},
-        {"Kelvin", 0, 0},
-        {0}
-};
-Fl_Menu_Item MainToMenu[] = {
-    {"Convert To", 0, 0, 0, FL_SUBMENU},
-        {"Millimeters", 0, 0},
-        {"Centimeters", 0, 0},
-        {"Meters", 0, 0},
-        {"Kilometers", 0, 0},
-        {"Inches", 0, 0},
-        {"Feet", 0, 0},
-        {"Miles", 0, 0},
-        {"Fahrenheit", 0, 0},
-        {"Celsius", 0, 0},
-        {"Kelvin", 0, 0},
-        {0}
+std::map<int, const char*> MenuItems{
+    {1, "Fahrenheit"},
+    {2, "Celsius"},
+    {3, "Kelvin"},
+    {4, "Millimeters"},
+    {5, "Centimeters"},
+    {6, "Meters"},
+    {7, "Kilometers"},
+    {8, "Inches"},
+    {9, "Feet"},
+    {10, "Miles"}
 };
 
 
@@ -151,8 +136,10 @@ Fl_Window* CreateWindow(){
     result = new Fl_Output(160, 190, 320, 20, "Result");
     quit = new Fl_Button(270, 240, 100, 20, "Exit");
     
-    cFromBut->copy(MainFromMenu);
-    cToBut->copy(MainToMenu);
+    for (auto& item : MenuItems) {
+        cFromBut->add(item.second);
+        cToBut->add(item.second);
+    }
     fromUnit->callback(cFromChanged_cb);
     toUnit->callback(cToChanged_cb);
     unitQty->callback(cQtyChanged_cb);
