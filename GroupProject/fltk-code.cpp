@@ -3,7 +3,8 @@
 //  groupproject
 //
 //  Created by Sarah Carter on 11/18/19.
-//  Copyright © 2019 Sarah Carter. All rights reserved.
+//  This code creates a graphical user interface in an FLTK window so there is
+//  minimal user entry, which reduces the chance for input error (e.g. misspellings).
 //
 
 #include <FL/Fl_Menu_Bar.H>
@@ -20,6 +21,7 @@
 #include "fltk-code.hpp"
 #include "proto.h"
 
+//Declare units globally to be used in following functions
 Fl_Menu_Button* cFromBut = nullptr;
 Fl_Menu_Button* cToBut = nullptr;
 Fl_Input_Choice* fromUnit = nullptr;
@@ -31,6 +33,7 @@ Fl_Button* quit = nullptr;
 
 unit info;
 
+//Obtain which unit the user wants to convert from
 void cFromChanged_cb(Fl_Widget* f, void* data){
     Fl_Input_Choice* fromUnit = (Fl_Input_Choice*)f;
     std::string fUn = fromUnit->value();
@@ -38,6 +41,7 @@ void cFromChanged_cb(Fl_Widget* f, void* data){
     fstr >> info.from;
 }
 
+//Obain which unit the user wants to convert to
 void cToChanged_cb(Fl_Widget* t, void* data){
     Fl_Input_Choice* toUnit = (Fl_Input_Choice*)t;
     std::string tUn = toUnit->value();
@@ -45,6 +49,7 @@ void cToChanged_cb(Fl_Widget* t, void* data){
     tstr >> info.to;
 }
 
+//Create a map of all converstion units available
 std::map<int, const char*> MenuItems{
     {1, "Fahrenheit"},
     {2, "Celsius"},
@@ -58,7 +63,7 @@ std::map<int, const char*> MenuItems{
     {10, "Miles"}
 };
 
-
+//Obtain quantity user wants to convert
 void cQtyChanged_cb(Fl_Widget* q, void* data){
     Fl_Input* unitQty = (Fl_Input*)q;
     std::string qtys = unitQty->value();
@@ -66,24 +71,34 @@ void cQtyChanged_cb(Fl_Widget* q, void* data){
     uqty >> info.qty;
 }
 
+//Run conversion functions when "Convert" button is clicked
 void OnConvertClicked_cb(Fl_Widget*, void* data){
     unit* info = (unit*)data;
     string TempError = "Temperature Unit Error";
     string TempError2 = "There is nothing lower than absolute 0!";
+    string LengthError = "Length Unit Error";
+
+    //Get string units converted to ints
     int fromunit = UnitFromCode(*info);
     int tounit = UnitToCode(*info);
+    
     double unitqty = (*info).qty;
     double conversion;
+    
+    //Make sure from and to units have been selected
     if(!fromunit || !tounit){
         result->value("Please enter units and quantity to convert.");
     }
     
+    //If user is converting temperature units, make sure their temperature is not
+    //below absolute zero
     if((fromunit == 1 && unitqty < -459.67) || (fromunit == 2 && unitqty < -273.15)
             || (fromunit == 3 && unitqty < 0)){
         result->value(TempError2.c_str());
     }
     else if(fromunit == 1){
         conversion = Fto(tounit, unitqty);
+        //For each temperature from unit, make sure the to unit is also temperature
         if(conversion == -460)
             result->value(TempError.c_str());
         else
@@ -103,6 +118,12 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
         else
             result->value(std::to_string(conversion).c_str());
     }
+    
+    //Check that conversion units are all length
+    if ((fromunit > 3 || fromunit < 10) && (tounit < 4 || tounit > 10))
+        result->value(LengthError.c_str());
+    
+    //Otherwise, convert other units
     else if(fromunit == 4){
         conversion = MMto(tounit, unitqty);
         result->value(std::to_string(conversion).c_str());
@@ -133,16 +154,19 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
     }
 }
 
+//Close window when "Exit" button is clicked
 void OnExitClicked_cb(Fl_Widget* w, void* data){
     if(!data) return;
     Fl_Window* win = (Fl_Window*)data;
     win->hide();
 }
 
+//Create the main program window
 Fl_Window* CreateWindow(){
     Fl_Window* window = new Fl_Window(640, 270, "Unit Conversion");
     window->begin();
     
+    //Create all inputs and buttons
     fromUnit = new Fl_Input_Choice(150, 70, 150, 20, "Convert From");
     toUnit = new Fl_Input_Choice(400, 70, 150, 20, "Convert To");
     cFromBut = fromUnit->menubutton();
@@ -152,17 +176,18 @@ Fl_Window* CreateWindow(){
     result = new Fl_Output(160, 190, 320, 20, "Result");
     quit = new Fl_Button(270, 240, 100, 20, "Exit");
     
+    //Fill menu button list choices
     for (auto& item : MenuItems) {
         cFromBut->add(item.second);
         cToBut->add(item.second);
     }
+    //Tie callbacks to fltk objects
     fromUnit->callback(cFromChanged_cb);
     toUnit->callback(cToChanged_cb);
     unitQty->callback(cQtyChanged_cb);
     convert->callback(OnConvertClicked_cb, (void*)&info);
     quit->callback(OnExitClicked_cb, (void*)window);
-    
-    
+        
     window->end();
     
     return window;
