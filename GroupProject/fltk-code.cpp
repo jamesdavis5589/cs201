@@ -68,6 +68,8 @@ void cQtyChanged_cb(Fl_Widget* q, void* data){
 
 void OnConvertClicked_cb(Fl_Widget*, void* data){
     unit* info = (unit*)data;
+    string TempError = "Temperature Unit Error";
+    string TempError2 = "There is nothing lower than absolute 0!";
     int fromunit = UnitFromCode(*info);
     int tounit = UnitToCode(*info);
     double unitqty = (*info).qty;
@@ -75,17 +77,31 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
     if(!fromunit || !tounit){
         result->value("Please enter units and quantity to convert.");
     }
+    
+    if((fromunit == 1 && unitqty < -459.67) || (fromunit == 2 && unitqty < -273.15)
+            || (fromunit == 3 && unitqty < 0)){
+        result->value(TempError2.c_str());
+    }
     else if(fromunit == 1){
         conversion = Fto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        if(conversion == -460)
+            result->value(TempError.c_str());
+        else
+            result->value(std::to_string(conversion).c_str());
     }
     else if(fromunit == 2){
         conversion = Cto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        if(conversion == -460)
+            result->value(TempError.c_str());
+        else
+            result->value(std::to_string(conversion).c_str());
     }
     else if(fromunit == 3){
         conversion = Kto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        if(conversion == -460)
+            result->value(TempError.c_str());
+        else
+            result->value(std::to_string(conversion).c_str());
     }
     else if(fromunit == 4){
         conversion = MMto(tounit, unitqty);
