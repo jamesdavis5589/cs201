@@ -72,7 +72,7 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
     int tounit = UnitToCode(*info);
     double unitqty = (*info).qty;
     double conversion;
-    if(!fromunit || !tounit || !unitqty){
+    if(!fromunit || !tounit){
         result->value("Please enter units and quantity to convert.");
     }
     else if(fromunit == 1){
