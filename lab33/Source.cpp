@@ -1,5 +1,9 @@
 /*
-
+James Davis
+CS201
+November 20th
+lab33
+This program will do stuff with a class
 */
 
 #include <iostream>
