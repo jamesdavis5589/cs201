@@ -15,5 +15,5 @@
 #include <FL/Fl_Widget.H>
 
 Fl_Window* CreateWindow();
-void cFromChanged(Fl_Widget* f, void* data);
+
 #endif /* fltk_code_hpp */

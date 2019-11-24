@@ -15,7 +15,6 @@ double Mto(int t, double x)
 {
 	if (t < 4 || t > 10)
 	{
-		cout << LengthError;
 		return 0;
 	}
 
