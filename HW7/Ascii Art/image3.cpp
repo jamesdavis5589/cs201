@@ -8,6 +8,11 @@
 Image3::Image3(unsigned width, unsigned height) {
 	// TODO: resize the pixels array
 	// TODO: initialize the internal w and h members
+
+	w = 1600;
+	h = 900;
+
+	pixels.resize(w*h);
 }
 
 // Return a pixel from the image
