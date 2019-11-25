@@ -82,7 +82,7 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
     //Get string units converted to ints
     int fromunit = UnitFromCode(*info);
     int tounit = UnitToCode(*info);
-    cout << fromunit << " " << tounit;
+
     double unitqty = (*info).qty;
     double conversion;
     
