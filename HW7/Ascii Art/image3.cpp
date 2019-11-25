@@ -22,6 +22,11 @@ const Color3& Image3::getPixel(unsigned x, unsigned y) const {
 	// BETTER OPTION 2: return a color
 	// Hint: maybe this is already in the class?
 
+	if (y + 1 * w)
+	{
+		std::cout << "ERROR in getPixel";
+	}
+
 	return pixels[y * w + x];
 }
 
@@ -38,6 +43,9 @@ bool Image3::savePPM(const std::string& path) const {
 bool Image3::loadPPM(const std::string& path) {
 	// TODO: Load an image from the disk
 	// REQUIREMENT: Use the STREAM operators for the file contents
+
+	std::ifstream fin;
+
 	return false;
 }
 
