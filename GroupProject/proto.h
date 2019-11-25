@@ -17,6 +17,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+//Create unit struct that takes unit strings and conversion quantity
 struct unit{
     string from;
     string to;
@@ -41,29 +42,5 @@ double KMto(int t, double x);
 double inchto(int t, double x);
 double footto(int t, double x);
 double mileto(int t, double x);
-
-/*
-IDEAS:
-
-Add FLTK interface, can FLTK be included within project, so it doesn't need to be added on new computers?
-Time conversions
-*/
-
-/*
-UNITS:
-
-Farenheit - 1
-Celsius - 2
-Kelvin - 3
-
-Millimeters - 4
-Centimeters - 5
-Meters - 6
-Kilometers - 7
-
-Inches - 8
-Feet - 9
-Miles - 10
-*/
 
 #endif

@@ -8,12 +8,11 @@ This program will hold the conversion functions regarding lengths
 
 #include "proto.h"
 
-string LengthError = "Length Unit Error";
-
-//Metric
+//Define all length conversions
 double Mto(int t, double x)
 {
-	if (t < 4 || t > 10)
+	//Check that only length units are being called
+    if (t < 4 || t > 10)
 	{
 		return 0;
 	}
@@ -49,7 +48,6 @@ double MMto(int t, double x)
 {
 	if (t < 4 || t > 10)
 	{
-		cout << LengthError;
 		return 0;
 	}
 
@@ -84,7 +82,6 @@ double CMto(int t, double x)
 {
 	if (t < 4 || t > 10)
 	{
-		cout << LengthError;
 		return 0;
 	}
 
@@ -119,7 +116,6 @@ double KMto(int t, double x)
 {
 	if (t < 4 || t > 10)
 	{
-		cout << LengthError;
 		return 0;
 	}
 
@@ -155,7 +151,6 @@ double inchto(int t, double x)
 {
 	if (t < 4 || t > 10)
 	{
-		cout << LengthError;
 		return 0;
 	}
 
@@ -190,7 +185,6 @@ double footto(int t, double x)
 {
 	if (t < 4 || t > 10)
 	{
-		cout << LengthError;
 		return 0;
 	}
 
@@ -225,7 +219,6 @@ double mileto(int t, double x)
 {
 	if (t < 4 || t > 10)
 	{
-		cout << LengthError;
 		return 0;
 	}
 

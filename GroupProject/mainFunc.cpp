@@ -8,7 +8,7 @@ This program will define any functions specific for the functionality of main.cp
 
 #include "proto.h"
 
-//no longer needed
+//Convert text unit selections to integers
 int UnitToCode(const unit &info)
 {
     std::string to = info.to;
@@ -62,19 +62,4 @@ int UnitFromCode(const unit &info){
     return codeF;
 }
 
-//change to int types instead of string checks
 
-//std::string setType(std::string s)
-//{
-//	if (s[0] == 'f' || s[0] == 'c' || s[0] == 'k')
-//		return "temp";
-//
-//
-//	if (s == "cm" || s == "mm" || s == "m" || s == "km")
-//		return "length";
-//
-//	if (s == "inches" || s == "feet" || s == "miles")
-//		return "length";
-//
-//	return "ERROR";
-//}

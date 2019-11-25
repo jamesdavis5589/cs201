@@ -8,13 +8,12 @@ This program will hold the conversion functions regarding temperature
 
 #include "proto.h"
 
-string TempError = "Temperature Unit Error";
-string TempError2 = "There is nothing lower than absolute 0!";
 
-//Temperature
+//Temperature conversion functions
 double Cto(int t, double x)
 {
-	if (t > 3)
+	//Check that only temperature units are being called
+    if (t > 3)
 	{
 		return -460;
 	}
@@ -27,7 +26,7 @@ double Cto(int t, double x)
 	//to Farenheit
 	if (t == 1)
 		return x * (1.8) + 32;
-
+    //return impossible temperature if conversion can't be done
 	return -460;
 }
 
