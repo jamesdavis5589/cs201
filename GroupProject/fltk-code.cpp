@@ -74,14 +74,15 @@ void cQtyChanged_cb(Fl_Widget* q, void* data){
 //Run conversion functions when "Convert" button is clicked
 void OnConvertClicked_cb(Fl_Widget*, void* data){
     unit* info = (unit*)data;
-    string TempError = "Temperature Unit Error";
-    string TempError2 = "There is nothing lower than absolute 0!";
-    string LengthError = "Length Unit Error";
+
+    std::string TempError = "Temperature Unit Error";
+    std::string TempError2 = "There is nothing lower than absolute 0!";
+    std::string LengthError = "Length Unit Error";
 
     //Get string units converted to ints
     int fromunit = UnitFromCode(*info);
     int tounit = UnitToCode(*info);
-    
+    cout << fromunit << " " << tounit;
     double unitqty = (*info).qty;
     double conversion;
     
@@ -91,37 +92,31 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
     }
     
     //If user is converting temperature units, make sure their temperature is not
-    //below absolute zero
-    if((fromunit == 1 && unitqty < -459.67) || (fromunit == 2 && unitqty < -273.15)
-            || (fromunit == 3 && unitqty < 0)){
+    //below absolute zero and that both units are temperature.
+    else if((fromunit < 4 && tounit > 3)){
+        result->value(TempError.c_str());
+    }
+    else if((fromunit == 1 && unitqty < -459.67) || (fromunit == 2 && unitqty < -273.15) || (fromunit == 3 && unitqty < 0)){
         result->value(TempError2.c_str());
     }
     else if(fromunit == 1){
         conversion = Fto(tounit, unitqty);
-        //For each temperature from unit, make sure the to unit is also temperature
-        if(conversion == -460)
-            result->value(TempError.c_str());
-        else
-            result->value(std::to_string(conversion).c_str());
+        result->value(std::to_string(conversion).c_str());
     }
     else if(fromunit == 2){
         conversion = Cto(tounit, unitqty);
-        if(conversion == -460)
-            result->value(TempError.c_str());
-        else
-            result->value(std::to_string(conversion).c_str());
+        std::cout << conversion;
+        result->value(std::to_string(conversion).c_str());
     }
     else if(fromunit == 3){
         conversion = Kto(tounit, unitqty);
-        if(conversion == -460)
-            result->value(TempError.c_str());
-        else
-            result->value(std::to_string(conversion).c_str());
+        result->value(std::to_string(conversion).c_str());
     }
     
     //Check that conversion units are all length
-    if ((fromunit > 3 || fromunit < 10) && (tounit < 4 || tounit > 10))
+    else if ((fromunit > 3 && fromunit <= 10) && (tounit < 4 || tounit > 10)){
         result->value(LengthError.c_str());
+    }
     
     //Otherwise, convert other units
     else if(fromunit == 4){
