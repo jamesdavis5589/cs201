@@ -127,7 +127,7 @@
     <ClCompile Include="student_main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="student.h" />
+    <ClInclude Include="student.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
