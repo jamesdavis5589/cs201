@@ -9,8 +9,8 @@ Image3::Image3(unsigned width, unsigned height) {
 	// TODO: resize the pixels array
 	// TODO: initialize the internal w and h members
 
-	w = 1600;
-	h = 900;
+	w = width;
+	h = height;
 
 	pixels.resize(w*h);
 }
@@ -22,9 +22,9 @@ const Color3& Image3::getPixel(unsigned x, unsigned y) const {
 	// BETTER OPTION 2: return a color
 	// Hint: maybe this is already in the class?
 
-	if (y + 1 * w)
+	if (( y * w + x ) >= ( y + 1 * w ) || ( y * w + x ) < 0)
 	{
-		std::cout << "ERROR in getPixel";
+		std::cout << "ERROR: Pixel is out of bounds";
 	}
 
 	return pixels[y * w + x];
@@ -44,7 +44,7 @@ bool Image3::loadPPM(const std::string& path) {
 	// TODO: Load an image from the disk
 	// REQUIREMENT: Use the STREAM operators for the file contents
 
-	std::ifstream fin;
+	
 
 	return false;
 }
