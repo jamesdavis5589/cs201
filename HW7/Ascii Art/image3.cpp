@@ -139,6 +139,16 @@ bool Image3::loadPPM(const std::string& path) {
 
 void Image3::printASCII(std::ostream& ostr) const {
 	// TODO: Print an ASCII version of this image
+
+	for (int i = 0; i < pixels.size(); i++)
+	{
+		std::cout << pixels[i].asciiValue();
+
+		if (i + 1 % w == 0)
+		{
+			std::cout << std::endl;
+		}
+	}
 }
 
 // STREAM OPERATORS for IMAGE3 class
