@@ -3,6 +3,9 @@
 // Original Author: Jonathan Metzgar
 // CS 201 course
 #include "Image3.hpp"
+#include <fstream>
+#include <string>
+#include <sstream>
 
 // Image3 Constructor
 Image3::Image3(unsigned width, unsigned height) {
@@ -45,9 +48,93 @@ bool Image3::loadPPM(const std::string& path) {
 	// TODO: Load an image from the disk
 	// REQUIREMENT: Use the STREAM operators for the file contents
 
-	
+	std::ifstream fstr("parrot.ppm");
+	if (!fstr)
+	{
+		std::cout << "Error in image3: loadPPM";
+		return false;
+	}
 
-	return false;
+	//resize pixels accordingly
+	std::string s;
+
+	//skip first line
+	std::getline(fstr, s);
+	//we want dimensions from second line
+	std::getline(fstr, s);
+
+	std::stringstream ss;
+	ss << s;
+
+	int x, y;
+
+	int mark;
+	for (int i = 0; i < s.size(); i++)
+	{
+		if (s[i] == ',')
+		{
+			mark = i;
+		}
+
+		break;
+	}
+
+	//reading width
+	ss >> x;
+
+	//reading height
+	ss << s[mark, s.size()];
+	ss >> y;
+
+	Image3(x, y);
+
+	//now that dimensions have been read and set accordingly, we set the pixels
+	std::string rgb;
+	int r2;
+	int g2;
+	int b2;
+
+	for (int i = 2; i < pixels.size(); i++)
+	{
+		if (fstr.eof())
+		{
+			break;
+		}
+
+		std::getline(fstr, rgb);
+
+		//finding RGB values
+		ss << rgb;
+		ss >> r2; //red
+
+		//finding spaces, so we can take other numbers
+		int m1 = -32;
+		int m2;
+		for (int j = 0; j < rgb.size(); j++)
+		{
+			if (rgb[j] = ' ')
+			{
+				m1 = i;
+			}
+			if (rgb[j] = ' ' && m1 != -32)
+			{
+				m2 = i;
+			}
+		}
+
+		ss << rgb[m1, m2];
+		ss >> g2; //green
+
+		ss << rgb[m2, rgb.size()];
+		ss >> b2; //blue
+
+
+		//set pixel to colors
+		Color3 nVal(r2, g2, b2);
+		pixels[i] = nVal;
+	}
+
+	return true;
 }
 
 void Image3::printASCII(std::ostream& ostr) const {
