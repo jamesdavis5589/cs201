@@ -49,7 +49,7 @@ void cToChanged_cb(Fl_Widget* t, void* data){
     tstr >> info.to;
 }
 
-//Create a map of all converstion units available
+//Create a map of all conversion units available
 std::map<int, const char*> MenuItems{
     {1, "Fahrenheit"},
     {2, "Celsius"},
