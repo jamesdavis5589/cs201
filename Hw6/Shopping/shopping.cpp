@@ -6,26 +6,7 @@ HW6 - Shopping - shopping.cpp
 This program will
 */
 
-#include <map>
-using std::map;
-#include <iostream>
-using std::cout;
-using std::cin;
-using std::endl;
-#include <string>
-using std::string;
-
-struct record
-{
-	void setPrice(double d)
-	{
-		unitPrice = d;
-	}
-
-private:
-	double unitPrice;
-	int units = 1;
-};
+#include "shop.h"
 
 int main()
 {
