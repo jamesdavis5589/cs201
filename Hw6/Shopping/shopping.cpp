@@ -17,31 +17,32 @@ using std::string;
 
 struct record
 {
+	void setPrice(double d)
+	{
+		unitPrice = d;
+	}
+
+private:
 	double unitPrice;
-	int units;
+	int units = 1;
 };
 
 int main()
 {
 	record apple;
-	apple.unitPrice = .79;
-	apple.units = 1;
+	apple.setPrice(.79);
 
 	record tv;
-	tv.unitPrice = 399.99;
-	tv.units = 1;
+	tv.setPrice(399.99);
 
 	record couch;
-	couch.unitPrice = 129.99;
-	couch.units = 1;
+	couch.setPrice(129.99);
 
 	record chicken;
-	chicken.unitPrice = 7.99;
-	chicken.units = 1;
+	chicken.setPrice(7.99);
 
 	record shirt;
-	shirt.unitPrice = 11.99;
-	shirt.units = 1;
+	shirt.setPrice(11.99);
 
 	map<string, record> cart;
 }
