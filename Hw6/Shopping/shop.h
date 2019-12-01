@@ -3,7 +3,7 @@ James Davis
 December 1st
 CS201
 HW6 - Shopping - shop.h
-This program will
+This program will house includes and prototypes
 */
 
 #ifndef shop_h
@@ -31,10 +31,28 @@ struct record
 		units = u;
 	}
 
+	int getUnits()
+	{
+		return units;
+	}
+
+	double getPrice()
+	{
+		return unitPrice;
+	}
+
+	double cost()
+	{
+		return unitPrice * units;
+	}
+
 private:
 	double unitPrice = 0;
-	int units = 1;
+	int units = 0;
 };
 
-#endif // !shop_h
+void add(record r, int i);
 
+void remove(record r, int i);
+
+#endif // !shop_h
