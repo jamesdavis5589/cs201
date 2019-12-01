@@ -8,15 +8,28 @@ This program will play a game of hangman utilising lambda functions
 
 #include "HMheader.h"
 
+//NOTE: It works out in my head but it seems like nothing is registering
+//		Letters aren't added to guessed and correct guesses count as wrong
+
 int main()
 {
 	charSet;
+	Canswer.push_back('s');
+	Canswer.push_back('t');
+	Canswer.push_back('i');
+	Canswer.push_back('n');
+	Canswer.push_back('k');
+	Canswer.push_back('y');
+	//NOTE: After adding the direct pushbacks above, correct guesses now register as correct, but 
+	//		win condition isn't met even after getting all correct
 
 	char input;
 
 	//Main user input
-	for (int i = 0; i < 10; i++)
+	for (int t = 0; t < 10; t++)
 	{
+		printGuessed;
+
 		//Input
 		cout << "What is your next character?" << endl;
 		cin >> input;

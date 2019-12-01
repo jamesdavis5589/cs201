@@ -26,6 +26,20 @@ vector<char> guessed;
 
 bool win = false;
 
+//Prints out guessed letters
+auto printGuessed = []()
+{
+	if (guessed.size() != 0)
+	{
+		cout << "Guessed characters:" << endl;
+
+		for (char cha : guessed)
+		{
+			cout << cha << ", ";
+		}
+	}
+};
+
 //Gathers different characters from answer
 auto charSet = []()
 {
@@ -57,6 +71,8 @@ auto charSet = []()
 
 auto check = [](char let)
 {
+	bool correct = false;
+
 	//Add letter to guessed characters
 	guessed.push_back(let);
 
@@ -67,12 +83,16 @@ auto check = [](char let)
 		{
 			got.push_back(let);
 			cout << "Nice, you got it!";
+			correct = true;
 			break;
 		}
 	}
 
 	//If char has no match
-	cout << "Nope, character is not in the answer";
+	if (!correct)
+	{
+		cout << "Nope, character is not in the answer";
+	}
 };
 
 auto winCondition = []()
