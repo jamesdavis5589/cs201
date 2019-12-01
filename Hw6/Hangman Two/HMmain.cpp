@@ -23,9 +23,13 @@ int main()
 		cout << "\n\n";
 
 		//Check input
+		check;
+		cout << "\n\n\n";
 
+		//Did you win?
+		winCondition;
 	}
 
 	//lose after 10 turns
-	lose;
+	cout << "Uh uh, you lost  =/" << endl;
 }

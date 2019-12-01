@@ -21,25 +21,12 @@ using std::vector;
 string answer = "stinky"; //Don't tell anyone
 
 vector<char> Canswer;
+vector<char> got;
 
-//for when you inevitably lose
-auto lose = []()
-{
-	cout << "Uh uh, you lost  =/";
-	cout << "\n\n";
-	cout << "Want to go again?";
-
-	string Lin;
-	cin >> Lin;
-
-	if (Lin == "y" || Lin == "yes")
-	{
-		main();
-	}
-};
+bool win = false;
 
 //Gathers different characters from answer
-auto charSet = [](string)
+auto charSet = []()
 {
 	Canswer.push_back(answer[0]);
 	bool boo;
@@ -64,6 +51,47 @@ auto charSet = [](string)
 				Canswer.push_back(answer[c]);
 			}
 		}
+	}
+};
+
+auto check = [](char let)
+{
+	for (int i = 0; i < Canswer.size(); i++)
+	{
+		//Checks for existing char
+		if (let == Canswer[i])
+		{
+			got.push_back(let);
+			cout << "Nice, you got it!";
+			break;
+		}
+	}
+
+	//If char has no match
+	cout << "Nope, character is not in the answer";
+};
+
+auto winCondition = []()
+{
+	int cLet = 0;
+
+	//Letter from pool of correctly guessed chars
+	for (int i = 0; i < got.size(); i++)
+	{
+		//Chars from answer
+		for (int q = 0; q < Canswer.size(); q++)
+		{
+			if (got[i] == Canswer[q])
+			{
+				cLet++;
+			}
+		}
+	}
+
+	//If number of correct letters equals total number of chars, then you must've gotten them all
+	if (cLet == Canswer.size())
+	{
+		win == true;
 	}
 };
 
