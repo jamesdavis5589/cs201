@@ -3,7 +3,7 @@ James Davis
 December 1st
 CS201
 HW6 - Hangman - HMheader.h
-This program will
+This program will define the lambda functions used in main
 */
 
 #include <iostream>
@@ -22,6 +22,7 @@ string answer = "stinky"; //Don't tell anyone
 
 vector<char> Canswer;
 vector<char> got;
+vector<char> guessed;
 
 bool win = false;
 
@@ -34,28 +35,31 @@ auto charSet = []()
 	//Current letter in answer
 	for (int c = 1; answer.size(); c++)
 	{
+		boo = true;
+
 		//Checks if letter is already registered
 		for (int d = 0; d < Canswer.size(); d++)
 		{
-			boo = true;
-
 			//Is letter found?
 			if (answer[c] == Canswer[d])
 			{
 				boo = false;
 			}
+		}
 
-			//If letter is new
-			if (boo)
-			{
-				Canswer.push_back(answer[c]);
-			}
+		//If letter is new
+		if (boo)
+		{
+			Canswer.push_back(answer[c]);
 		}
 	}
 };
 
 auto check = [](char let)
 {
+	//Add letter to guessed characters
+	guessed.push_back(let);
+
 	for (int i = 0; i < Canswer.size(); i++)
 	{
 		//Checks for existing char
@@ -91,7 +95,7 @@ auto winCondition = []()
 	//If number of correct letters equals total number of chars, then you must've gotten them all
 	if (cLet == Canswer.size())
 	{
-		win == true;
+		win = true;
 	}
 };
 
