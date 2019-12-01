@@ -21,7 +21,7 @@ int main()
 	Canswer.push_back('k');
 	Canswer.push_back('y');
 	//NOTE: After adding the direct pushbacks above, correct guesses now register as correct, but 
-	//		win condition isn't met even after getting all correct
+	//		win condition isn't activating 
 
 	char input;
 

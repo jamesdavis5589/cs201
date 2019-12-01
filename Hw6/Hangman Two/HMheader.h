@@ -27,13 +27,13 @@ vector<char> guessed;
 bool win = false;
 
 //Prints out guessed letters
-auto printGuessed = []()
+auto printGuessed = [](vector<char> f)
 {
 	if (guessed.size() != 0)
 	{
 		cout << "Guessed characters:" << endl;
 
-		for (char cha : guessed)
+		for (char cha : f)
 		{
 			cout << cha << ", ";
 		}
