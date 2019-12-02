@@ -1,13 +1,12 @@
 /*
 James Davis
-September 29th
+September 29th -> December 1st
 CS201
 HW3 - boxprint.cpp
 This program will utilise and test the box function
 */
 
 #include "boxer.h"
-#include <iostream>
 
 int main()
 {
@@ -23,15 +22,7 @@ int main()
 	if (x < 0)
 	{
 		std::cout << "ERROR: Please enter a posative integer:";
-		main();
 	}
-
-	box(word, x);
-
-	char c;
-	std::cout << "\n\n\nWould you like to continue? (Y/N)\n";
-	std::cin >> c;
-
-	if (c == 'Y')
-		main();
+	else
+		box(word, x);
 }
