@@ -36,10 +36,14 @@ int main()
 	cout << accumulate(accArray, accArray + 3, 30);
 	cout << "\n\n";
 	
+	/*
+	//I can't figure out how to get the Inner-product to work
+	//Whenever I try to find out what an inner product is, I just find something about vectors from linear algebra
+
 	//inner-product
-	int array1[] = { 5, 10, 15 };
-	int array2[] = { 1, 2, 3 };
+	int array1[] = { 5, 10, 15, 20, 25, 30 };
+	int array2[] = { 10, 20, 30, 40, 50, 60, 70, 80 };
 
 	cout << "inner-product(array1[0], array1[2], array2[0], 20)" << endl;
-	cout << inner_product(array1[0], array1[2], array2[0], 20);
+	cout << inner_product(array1[0], array1[2], array2[0], 5);*/
 }
