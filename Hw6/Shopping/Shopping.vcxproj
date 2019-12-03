@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{0AAD4FC9-738F-4713-88C4-D4DF4A5AB11C}</ProjectGuid>
-    <RootNamespace>Lab7</RootNamespace>
+    <ProjectGuid>{424BC7CC-D639-4B6D-B5D7-D3B1B670890C}</ProjectGuid>
+    <RootNamespace>Shopping</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,10 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="intio.cpp" />
+    <ClCompile Include="shop.cpp" />
+    <ClCompile Include="shopping.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="intio.hpp" />
+    <ClInclude Include="shop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

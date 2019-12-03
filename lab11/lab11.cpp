@@ -3,7 +3,7 @@ James Davis
 CS201
 September 27th
 lab11.cpp
-This program will
+This program will sort characters
 */
 
 #include <iostream>

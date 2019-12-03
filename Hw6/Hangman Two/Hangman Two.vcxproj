@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{0AAD4FC9-738F-4713-88C4-D4DF4A5AB11C}</ProjectGuid>
-    <RootNamespace>Lab7</RootNamespace>
+    <ProjectGuid>{CB568ED4-C72F-45AB-8341-A6DA13D44C01}</ProjectGuid>
+    <RootNamespace>HangmanTwo</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,10 +123,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="intio.cpp" />
+    <ClCompile Include="HMmain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="intio.hpp" />
+    <ClInclude Include="HMheader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

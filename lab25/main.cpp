@@ -1,9 +1,9 @@
 /*
 James Davis
 CS201
-November 1st
+November 1st -> December 2nd
 lab25 - main.cpp
-This program will
+This program will test out mismatch
 */
 
 #include <iostream>
@@ -15,13 +15,13 @@ int main()
 {
 	std::vector <int> prime { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	std::vector <int> mega { 1, 2, 3, 4, 16, 17, 18, 8, 9, 10 };
-
 	std::pair <int, int> results;
+
 	auto it = mismatch(prime.begin(), prime.end(), mega.begin());
 	results.first = *it.first;
 	results.second = *it.second;
 
-	if (results.first = prime.size())
+	if (results.first == prime.size())
 	{
 		std::cout << "Both vectors are equal\n";
 	}

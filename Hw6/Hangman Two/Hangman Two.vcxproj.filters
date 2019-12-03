@@ -15,15 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="boxer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="boxprint.cpp">
+    <ClCompile Include="HMmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="boxer.h">
+    <ClInclude Include="HMheader.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

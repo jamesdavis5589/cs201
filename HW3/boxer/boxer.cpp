@@ -1,15 +1,12 @@
 /*
 James Davis
-<<<<<<< HEAD
-September 29th
+September 29th -> December 1st
 CS201
 HW3 - boxer.cpp
 This program will define the box prototype
 */
 
 #include "boxer.h"
-#include <string>
-#include <iostream>
 
 void box(std::string word, int x)
 {
@@ -17,7 +14,7 @@ void box(std::string word, int x)
 	width = word.size() + 2 + (2 * x);
 
 	char print = 'X';
-	
+
 	//top
 	for (int i = 0; i < x; i++)
 	{
@@ -27,13 +24,13 @@ void box(std::string word, int x)
 		}
 		std::cout << "\n";
 	}
-	
+
 	//mid 1
 	for (int i = 0; i < x; i++)
 	{
 		std::cout << print;
 	}
-	
+
 	for (int i = 0; i < width - (2 * x); i++)
 	{
 		std::cout << " ";
@@ -51,7 +48,7 @@ void box(std::string word, int x)
 	}
 
 	std::cout << " " << word << " ";
-	
+
 	for (int i = 0; i < x; i++)
 	{
 		std::cout << print;
@@ -72,7 +69,7 @@ void box(std::string word, int x)
 		std::cout << print;
 	}
 	std::cout << "\n";
-	
+
 	//bottom
 	for (int i = 0; i < x; i++)
 	{
@@ -82,23 +79,4 @@ void box(std::string word, int x)
 		}
 		std::cout << "\n";
 	}
-=======
-CS201
-September 25th
-HW# - boxer.cpp
-This program will create various sized boxes around input text
-*/
-
-#include <iostream>
-#include <string>
-
-void boxer(std::string word, int thick)
-{
-
-}
-
-int main()
-{
-
->>>>>>> bf4d226d47129d40ea0b7402948f9c3657220adf
 }

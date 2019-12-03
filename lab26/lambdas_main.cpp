@@ -42,13 +42,15 @@ int main() {
 	//       Use std::sort with a comparison lambda function that sorts
 	//       the vector pairs with the first member in descending order.
 
-	auto lambda = [](pair<size_t, string> a, pair<size_t, string> b)
+	auto sorter = [](pair<size_t, string> p)
 	{
-		size_t v1 = a.first;
-		size_t v2 = b.first;
-
-		return v1 > v2;
+		std::vector<size_t> temp;
+		for (auto a : p)
+		{
+			temp.pushback(a.first);
+		}
 	};
+
 
 	// TODO: REQUIRED
 	//       Use printVectorPairs() to print the vector

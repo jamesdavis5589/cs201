@@ -1,6 +1,6 @@
 /**
  * @file     lambdas.hpp
- * @author   Student Name
+ * @author   James Davis
  * @date     Mar 21, 2019
  * John Quan
  *

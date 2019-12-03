@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="intio.h">
+    <ClInclude Include="intio.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
