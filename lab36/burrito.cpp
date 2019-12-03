@@ -66,4 +66,12 @@ int main()
 	cout << "First burrito:" << endl;
 	checkToppings(Beans | Cheese);
 	cout << "\n\n";
+
+	cout << "Second burrito:" << endl;
+	checkToppings(Beans | Cheese | Beef);
+	cout << "\n\n";
+
+	cout << "Third burrito:" << endl;
+	checkToppings(HotSauce | SourCream | Beef | Cheese);
+	cout << "\n\n";
 }
