@@ -51,7 +51,10 @@ void cToChanged_cb(Fl_Widget* t, void* data){
 }
 
 void formatOutput(std::ostringstream &prec, double &conversion){
-    prec << std::setprecision(3) << std::fixed << conversion;
+    if(conversion < 0.000)
+        prec << conversion;
+    else
+        prec << std::setprecision(3) << conversion;
     result->value((prec.str()).c_str());
 }
 
