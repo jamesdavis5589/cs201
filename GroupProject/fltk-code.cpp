@@ -50,6 +50,8 @@ void cToChanged_cb(Fl_Widget* t, void* data){
     tstr >> info.to;
 }
 
+//Format the conversion output to have only 3 decimals unless the result
+//is less than 0.000
 void formatOutput(std::ostringstream &prec, double &conversion){
     if(conversion < 0.000)
         prec << conversion;
@@ -115,6 +117,7 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
         result->value(LengthError.c_str());
     }
     
+    //If above tests are fine, run conversions
     else
         switch (fromunit){
             case 1:
