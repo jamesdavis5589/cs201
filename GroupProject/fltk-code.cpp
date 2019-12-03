@@ -17,6 +17,7 @@
 #include <FL/Fl_Input_Choice.H>
 #include <sstream>
 #include <map>
+#include <iomanip>
 
 #include "fltk-code.hpp"
 #include "proto.h"
@@ -85,6 +86,7 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
 
     double unitqty = (*info).qty;
     double conversion;
+    std::ostringstream prec;
     
     //Make sure from and to units have been selected
     if(!fromunit || !tounit){
@@ -101,16 +103,19 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
     }
     else if(fromunit == 1){
         conversion = Fto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        prec << std::setprecision(3) << std::fixed << conversion;
+        result->value((prec.str()).c_str());
     }
     else if(fromunit == 2){
         conversion = Cto(tounit, unitqty);
-        std::cout << conversion;
-        result->value(std::to_string(conversion).c_str());
+        prec << std::setprecision(3) << std::fixed << conversion;
+        result->value((prec.str()).c_str());
+        
     }
     else if(fromunit == 3){
         conversion = Kto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        prec << std::setprecision(3) << std::fixed << conversion;
+        result->value((prec.str()).c_str());
     }
     
     //Check that conversion units are all length
@@ -121,31 +126,38 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
     //Otherwise, convert other units
     else if(fromunit == 4){
         conversion = MMto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        prec << std::setprecision(3) << std::fixed << conversion;
+        result->value((prec.str()).c_str());
     }
     else if(fromunit == 5){
         conversion = CMto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        prec << std::setprecision(3) << std::fixed << conversion;
+        result->value((prec.str()).c_str());
     }
     else if(fromunit == 6){
         conversion = Mto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        prec << std::setprecision(3) << std::fixed << conversion;
+        result->value((prec.str()).c_str());
     }
     else if(fromunit == 7){
         conversion = KMto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        prec << std::setprecision(3) << std::fixed << conversion;
+        result->value((prec.str()).c_str());
     }
     else if(fromunit == 8){
         conversion = inchto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        prec << std::setprecision(3) << std::fixed << conversion;
+        result->value((prec.str()).c_str());
     }
     else if(fromunit == 9){
         conversion = footto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        prec << std::setprecision(3) << std::fixed << conversion;
+        result->value((prec.str()).c_str());
     }
     else{
         conversion = mileto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
+        prec << std::setprecision(3) << std::fixed << conversion;
+        result->value((prec.str()).c_str());
     }
 }
 
