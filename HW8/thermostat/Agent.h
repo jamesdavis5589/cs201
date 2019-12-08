@@ -25,7 +25,7 @@ public:
 
 	void percieve(Environment e);
 	void think();
-	void act(Environment e);
+	void act(Environment &e);
 };
 
 #endif

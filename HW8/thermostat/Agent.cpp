@@ -55,7 +55,7 @@ void Agent::think()
 	}
 }
 
-void Agent::act(Environment e)
+void Agent::act(Environment &e)
 {
 	if (act)
 	{
