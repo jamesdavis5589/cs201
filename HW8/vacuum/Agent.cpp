@@ -12,14 +12,16 @@ Agent::Agent() :
 	toDo(false),
 	clean(true),
 	position(0),
-	move(false)
+	move(false),
+	direction(true)
 {}
 
 Agent::Agent(int p) :
 	toDo(false),
 	clean(true),
 	position(p),
-	move(false)
+	move(false),
+	direction(true)
 {}
 
 void Agent::look(Environment e)

@@ -8,6 +8,7 @@ This program will run the main program
 
 #include "Agent.h"
 #include "Environment.h"
+#include "House.h"
 
 #include <iostream>
 using std::cin;

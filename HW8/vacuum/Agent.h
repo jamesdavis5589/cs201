@@ -13,9 +13,10 @@ This program will house prototypes for Agent
 
 class Agent
 {
-	bool toDo;
-	bool clean;
+	bool toDo; //if true, room needs cleaning
+	bool clean; //is room clean?
 	bool move;
+	bool direction; //true is right, false is left
 
 public:
 	int position;
@@ -28,4 +29,4 @@ public:
 	void act(Environment &e);
 };
 
-#endif
+#endif 

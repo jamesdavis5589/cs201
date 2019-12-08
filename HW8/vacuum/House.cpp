@@ -3,13 +3,14 @@ James Davis
 December 8th
 CS201
 HW8 - vacuum - Agent.cpp
-This program will define Agent
+This program will define House
 */
 
 #include "House.h"
 #include <cmath>
 
-House::House() 
+House::House() :
+	vacuum()
 {
 	rooms.push_back(Environment());
 }
@@ -32,4 +33,9 @@ House::House(int r)
 			rooms.push_back(Environment(false));
 		}
 	}
+}
+
+void House::turn()
+{
+	
 }
