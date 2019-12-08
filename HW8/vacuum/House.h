@@ -10,22 +10,18 @@ This program will house prototypes for Agent
 #define Agent_h
 
 #include "Environment.h"
+#include "Agent.h"
 
-class Agent
+#include <vector>
+using std::vector;
+
+class House
 {
-	bool toDo;
-	bool clean;
-	bool move;
+	vector<Environment> rooms;
 
 public:
-	int position;
-
-	Agent();
-	Agent(int p);
-
-	void look(Environment e);
-	void think();
-	void act(Environment &e);
+	House();
+	House(int r);
 };
 
 #endif

@@ -3,7 +3,7 @@ James Davis
 December 8th
 CS201
 HW8 - vacuum - Environment.h
-This program will
+This program will house prototypes for Environment
 */
 
 #ifndef Environment_h

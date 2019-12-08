@@ -3,7 +3,7 @@ James Davis
 December 8th
 CS201
 HW8 - vacuum - Environment.cpp
-This program will
+This program will define Environment
 */
 
 #include "Environment.h"
