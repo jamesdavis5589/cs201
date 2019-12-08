@@ -13,8 +13,8 @@ Environment::Environment() :
 	temp(0)
 {}
 
-Environment::Environment(int t, bool h) :
-	heater(h),
+Environment::Environment(int t) :
+	heater(false),
 	temp(t)
 {}
 

@@ -9,8 +9,7 @@ This program will house prototypes for class Agent
 #ifndef Agent_h
 #define Agent_h
 
-#include "Simulator.h"
-#include "Agent.h"
+#include "Environment.h"
 
 class Agent {
 	int temp;
@@ -22,6 +21,7 @@ public:
 	Agent(int t, int g);
 
 	void setGoal(int g);
+	int getGoal();
 
 	void percieve(Environment e);
 	void think();

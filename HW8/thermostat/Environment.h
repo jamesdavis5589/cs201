@@ -10,7 +10,6 @@ This program will house prototypes for class Environment
 #define Environment_h
 
 #include "Agent.h"
-#include "Simulator.h"
 
 class Environment {
 	int temp;
@@ -18,7 +17,7 @@ class Environment {
 
 public:
 	Environment();
-	Environment(int t, bool h);
+	Environment(int t);
 
 	void iteration();
 

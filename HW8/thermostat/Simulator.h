@@ -13,10 +13,12 @@ This program will house prototypes for class Simulator
 #include "Environment.h"
 
 class Simulator {
-	
+	Environment room;
+	Agent rex;
 
 public:
 	Simulator();
+	Simulator(int t, int g);
 
 	void askOwner();
 	void run();

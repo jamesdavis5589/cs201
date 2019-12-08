@@ -16,18 +16,31 @@ Agent::Agent() :
 
 Agent::Agent(int t, int g) :
 	temp(t),
-	goal(g),
-	hot(false)
-{}
-
-void Agent::percieve(Environment e)
+	goal(g)
 {
-	temp = e.getTemp();
+	if (t < g)
+	{
+		hot = false;
+	}
+	else
+	{
+		hot = true;
+	}
 }
 
 void Agent::setGoal(int g)
 {
 	goal = g;
+}
+
+int Agent::getGoal()
+{
+	return goal;
+}
+
+void Agent::percieve(Environment e)
+{
+	temp = e.getTemp();
 }
 
 void Agent::think()
