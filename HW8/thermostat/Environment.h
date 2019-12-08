@@ -21,6 +21,10 @@ public:
 	Environment(int t, bool h);
 
 	void iteration();
+
+	int getTemp();
+	bool getHeater();
+	void setHeater(bool b);
 };
 
 #endif

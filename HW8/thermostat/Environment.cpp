@@ -29,3 +29,18 @@ void Environment::iteration()
 		temp--;
 	}
 }
+
+int Environment::getTemp()
+{
+	return temp;
+}
+
+bool Environment::getHeater()
+{
+	return heater;
+}
+
+void Environment::setHeater(bool b)
+{
+	heater = b;
+}

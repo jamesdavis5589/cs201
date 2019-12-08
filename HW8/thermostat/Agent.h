@@ -13,8 +13,16 @@ This program will house prototypes for class Agent
 #include "Agent.h"
 
 class Agent {
+	int temp;
+	int goal;
+	bool hot;
 
 public:
+	Agent();
+	Agent(int t, int g);
+
+	void setGoal(int g);
+
 	void percieve(Environment e);
 	void think();
 	void act(Environment e);
