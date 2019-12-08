@@ -7,3 +7,16 @@ This program will
 */
 
 #include "Environment.h"
+
+Environment::Environment() :
+	clean(true)
+{}
+
+Environment::Environment(bool c) :
+	clean(c)
+{}
+
+bool Environment::getClean()
+{
+	return clean;
+}
