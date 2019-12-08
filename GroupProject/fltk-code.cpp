@@ -17,6 +17,7 @@
 #include <FL/Fl_Input_Choice.H>
 #include <sstream>
 #include <map>
+#include <iomanip>
 
 #include "fltk-code.hpp"
 #include "proto.h"
@@ -47,6 +48,16 @@ void cToChanged_cb(Fl_Widget* t, void* data){
     std::string tUn = toUnit->value();
     std::istringstream tstr(tUn);
     tstr >> info.to;
+}
+
+//Format the conversion output to have only 3 decimals unless the result
+//is less than 0.000
+void formatOutput(std::ostringstream &prec, double &conversion){
+    if(conversion < 0.000)
+        prec << conversion;
+    else
+        prec << std::setprecision(3) << conversion;
+    result->value((prec.str()).c_str());
 }
 
 //Create a map of all conversion units available
@@ -85,6 +96,7 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
 
     double unitqty = (*info).qty;
     double conversion;
+    std::ostringstream prec;
     
     //Make sure from and to units have been selected
     if(!fromunit || !tounit){
@@ -99,54 +111,56 @@ void OnConvertClicked_cb(Fl_Widget*, void* data){
     else if((fromunit == 1 && unitqty < -459.67) || (fromunit == 2 && unitqty < -273.15) || (fromunit == 3 && unitqty < 0)){
         result->value(TempError2.c_str());
     }
-    else if(fromunit == 1){
-        conversion = Fto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
-    }
-    else if(fromunit == 2){
-        conversion = Cto(tounit, unitqty);
-        std::cout << conversion;
-        result->value(std::to_string(conversion).c_str());
-    }
-    else if(fromunit == 3){
-        conversion = Kto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
-    }
     
     //Check that conversion units are all length
     else if ((fromunit > 3 && fromunit <= 10) && (tounit < 4 || tounit > 10)){
         result->value(LengthError.c_str());
     }
     
-    //Otherwise, convert other units
-    else if(fromunit == 4){
-        conversion = MMto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
-    }
-    else if(fromunit == 5){
-        conversion = CMto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
-    }
-    else if(fromunit == 6){
-        conversion = Mto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
-    }
-    else if(fromunit == 7){
-        conversion = KMto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
-    }
-    else if(fromunit == 8){
-        conversion = inchto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
-    }
-    else if(fromunit == 9){
-        conversion = footto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
-    }
-    else{
-        conversion = mileto(tounit, unitqty);
-        result->value(std::to_string(conversion).c_str());
-    }
+    //If above tests are fine, run conversions
+    else
+        switch (fromunit){
+            case 1:
+                conversion = Fto(tounit, unitqty);
+                formatOutput(prec, conversion);
+                break;
+            case 2:
+                conversion = Cto(tounit, unitqty);
+                formatOutput(prec, conversion);
+                break;
+            case 3:
+                conversion = Kto(tounit, unitqty);
+                formatOutput(prec, conversion);
+                break;
+            case 4:
+                conversion = MMto(tounit, unitqty);
+                formatOutput(prec, conversion);
+                break;
+            case 5:
+                conversion = CMto(tounit, unitqty);
+                formatOutput(prec, conversion);
+                break;
+            case 6:
+                conversion = Mto(tounit, unitqty);
+                formatOutput(prec, conversion);
+                break;
+            case 7:
+                conversion = KMto(tounit, unitqty);
+                formatOutput(prec, conversion);
+                break;
+            case 8:
+                conversion = inchto(tounit, unitqty);
+                formatOutput(prec, conversion);
+                break;
+            case 9:
+                conversion = footto(tounit, unitqty);
+                formatOutput(prec, conversion);
+                break;
+            case 10:
+                conversion = mileto(tounit, unitqty);
+                formatOutput(prec, conversion);
+                break;
+        }
 }
 
 //Close window when "Exit" button is clicked
