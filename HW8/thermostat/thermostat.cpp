@@ -3,7 +3,7 @@ James Davis
 December 7th
 CS201
 HW8 - thermostat.cpp
-This program will
+This program will run the main thermostat program
 */
 
 #include "Agent.h"
