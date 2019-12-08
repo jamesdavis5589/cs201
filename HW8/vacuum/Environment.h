@@ -20,6 +20,7 @@ public:
 	Environment(bool c);
 
 	bool getClean();
+	void setClean(bool b);
 };
 
 #endif

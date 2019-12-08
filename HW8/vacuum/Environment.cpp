@@ -20,3 +20,8 @@ bool Environment::getClean()
 {
 	return clean;
 }
+
+void Environment::setClean(bool b)
+{
+	clean = b;
+}

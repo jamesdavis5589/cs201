@@ -11,6 +11,17 @@ This program will
 
 #include "Environment.h"
 
+class Agent
+{
+	bool toDo;
+	bool clean;
 
+public:
+	Agent();
+
+	void look(Environment e);
+	void think();
+	void act(Environment &e);
+};
 
 #endif
