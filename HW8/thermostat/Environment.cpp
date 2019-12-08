@@ -18,7 +18,7 @@ Environment::Environment(int t, bool h) :
 	temp(t)
 {}
 
-void Environment::iteration() const
+void Environment::iteration()
 {
 	if (heater)
 	{

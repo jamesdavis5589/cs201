@@ -20,7 +20,7 @@ public:
 	Environment();
 	Environment(int t, bool h);
 
-	void iteration() const;
+	void iteration();
 };
 
 #endif
