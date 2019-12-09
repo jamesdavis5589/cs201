@@ -9,6 +9,9 @@ This program will house prototypes for Set
 #ifndef Set_h
 #define Set_h
 
+#include <vector>
+using std::vector;
+
 class Set
 {
 	int d1;
@@ -18,6 +21,7 @@ class Set
 
 public:
 	Set();
+	vector<int> print();
 };
 
 #endif // !Set_h

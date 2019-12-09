@@ -12,7 +12,10 @@ This program will define Set
 using std::rand;
 
 Set::Set() :
-	d1(rand() % 9)
+	d1(rand() % 9),
+	d2(0),
+	d3(0),
+	d4(0)
 {
 	bool b = true;
 
@@ -49,4 +52,10 @@ Set::Set() :
 			break;
 		}
 	}
+}
+
+vector<int> Set::print()
+{
+	vector<int> v = {d1, d2, d3, d4};
+	return v;
 }
