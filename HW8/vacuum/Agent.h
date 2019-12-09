@@ -13,8 +13,8 @@ This program will house prototypes for Agent
 
 class Agent
 {
-	bool toDo; //if true, room needs cleaning
 	bool clean; //is room clean?
+	bool toDo; //if true, room needs cleaning
 	bool move;
 	bool direction; //true is right, false is left
 
