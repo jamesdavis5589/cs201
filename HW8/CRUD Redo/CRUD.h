@@ -11,16 +11,19 @@ This program will house prototypes for CRUD
 
 #include <string>
 using std::string;
+#include <map>
+using std::map;
+using std::pair;
 
 namespace CRUD 
 {
-	void create();
+	void create(map<string, string> m, string s, string f);
 
-	string read();
+	string read(pair<string, string> p);
 
-	void update();
+	void update(map<string, string> m, string s, string f);
 
-	void Dlete();
+	void Dlete(map<string, string> m, string s);
 }
 
 #endif // !CRUD_h

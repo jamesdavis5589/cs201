@@ -8,22 +8,22 @@ This program will define CRUD
 
 #include "CRUD.h"
 
-void CRUD::create()
+void CRUD::create(map<string, string> m, string s, string f)
 {
-
+	m[s] = f;
 }
 
-string CRUD::read()
+string CRUD::read(pair<string, string> p)
 {
-
+	return p.second;
 }
 
-void CRUD::update()
+void CRUD::update(map<string, string> m, string s, string f)
 {
-
+	m[s] = f;
 }
 
-void CRUD::Dlete()
+void CRUD::Dlete(map<string, string> m, string s)
 {
-
+	m.erase(s);
 }
