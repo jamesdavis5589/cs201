@@ -8,6 +8,10 @@ This program will define CRUD
 
 #include "CRUD.h"
 
+#include <iostream>
+using std::cout;
+using std::endl;
+
 void CRUD::create(map<string, string> m, string s, string f)
 {
 	m[s] = f;
@@ -16,6 +20,24 @@ void CRUD::create(map<string, string> m, string s, string f)
 string CRUD::read(pair<string, string> p)
 {
 	return p.second;
+}
+string CRUD::read(pair<string, string> p, int x)
+{
+	if (x == 2)
+		return p.second;
+	else
+		return p.first;
+}
+string CRUD::read(map<string, string> m, string s)
+{
+	return m[s];
+}
+string CRUD::read(map<string, string> m)
+{
+	for (pair<string, string> p : m)
+	{
+		cout << read(p, 1) << ": " << read(p, 2) << endl;
+	}
 }
 
 void CRUD::update(map<string, string> m, string s, string f)
