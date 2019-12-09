@@ -9,8 +9,6 @@ This program will house prototypes for class Environment
 #ifndef Environment_h
 #define Environment_h
 
-#include "Agent.h"
-
 class Environment {
 	int temp;
 	bool heater;

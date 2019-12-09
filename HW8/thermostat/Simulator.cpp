@@ -44,6 +44,8 @@ void Simulator::askOwner()
 		cin >> input2;
 		rex.setGoal(input2);
 	}
+
+	cout << endl;
 }
 
 void Simulator::run()

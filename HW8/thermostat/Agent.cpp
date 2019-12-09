@@ -57,7 +57,7 @@ void Agent::think()
 
 void Agent::act(Environment &e)
 {
-	if (act)
+	if (hot)
 	{
 		e.setHeater(true);
 	}
