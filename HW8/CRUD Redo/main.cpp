@@ -28,9 +28,29 @@ int main()
 	m["Josh"] = "Dragon Ball";
 	m["Derick"] = "Terarria";
 
+	cout << "Initial map:" << endl;
+	read(m);
+	cout << endl;
+
 	//Testing Create
+	cout << "Testing Create:" << endl;
 	create(m, "Zack", "League");
+	read(m);
+	cout << endl;
 
 	//Testing Read
+	cout << "Testing Read:" << endl;
+	read(m);
+	cout << endl;
+
+	//Testing Update
+	cout << "Testing Update:" << endl;
+	update(m, "Derick", "Minecraft");
+	read(m);
+	cout << endl;
+
+	//Testing Delete
+	cout << "Testing Delete:" << endl;
+	Dlete(m, "Derick");
 	read(m);
 }

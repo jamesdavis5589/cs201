@@ -22,7 +22,7 @@ namespace CRUD
 	string read(pair<string, string> p);
 	string read(pair<string, string> p, int x);
 	string read(map<string, string> m, string s);
-	string read(map<string, string> m);
+	void read(map<string, string> m);
 
 	void update(map<string, string> m, string s, string f);
 

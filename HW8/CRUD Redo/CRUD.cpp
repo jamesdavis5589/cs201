@@ -32,7 +32,7 @@ string CRUD::read(map<string, string> m, string s)
 {
 	return m[s];
 }
-string CRUD::read(map<string, string> m)
+void CRUD::read(map<string, string> m)
 {
 	for (pair<string, string> p : m)
 	{
