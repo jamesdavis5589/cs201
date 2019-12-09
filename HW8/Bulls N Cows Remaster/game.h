@@ -14,7 +14,7 @@ using std::vector;
 #ifndef game_h
 #define game_h
 
-class game {
+class Game {
 	//Total number of turns before game over
 	int turns;
 	vector<int> digits;
@@ -22,7 +22,7 @@ class game {
 	bool win;
 
 public:
-	game();
+	Game();
 
 	void match();
 	void turn();

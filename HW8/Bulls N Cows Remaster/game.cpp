@@ -13,7 +13,10 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-game::game() :
+#include <string>
+using std::string;
+
+Game::Game() :
 	set(),
 	turns(10),
 	win(false)
@@ -21,7 +24,7 @@ game::game() :
 	digits = set.print();
 }
 
-void game::match()
+void Game::match()
 {
 	Set set;
 
@@ -44,20 +47,32 @@ void game::match()
 	{
 		cout << "Hurray, you win!";
 	}
+	cout << endl << endl;
 
 	//Play again?
+	string pg;
+
+	cout << "Would you like to play again?" << endl;
+	cin >> pg;
+
+	if (pg == "yes" || pg == "y")
+	{
+		match();
+	}
 }
 
-void game::turn()
+void Game::turn()
 {
 	int input;
 
 	cout << "What's your guess?" << endl;
 	cin >> input;
+	cout << endl;
+
 	evaluate(input);
 }
 
-void game::evaluate(int x)
+void Game::evaluate(int x)
 {
 	//Number of correct guesses
 	int correct = 0;
@@ -95,5 +110,6 @@ void game::evaluate(int x)
 	else
 	{
 		cout << "You got " << correct << " bulls";
+		cout << endl << endl;
 	}
 }
