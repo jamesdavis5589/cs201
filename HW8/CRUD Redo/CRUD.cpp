@@ -12,9 +12,9 @@ This program will define CRUD
 using std::cout;
 using std::endl;
 
-void CRUD::create(map<string, string> m, string s, string f)
+void CRUD::create(map<string, string> &m, string s, string f)
 {
-	m[s] = f;
+	m.insert(pair<string, string>(s, f));
 }
 
 string CRUD::read(pair<string, string> p)
@@ -40,12 +40,12 @@ void CRUD::read(map<string, string> m)
 	}
 }
 
-void CRUD::update(map<string, string> m, string s, string f)
+void CRUD::update(map<string, string> &m, string s, string f)
 {
 	m[s] = f;
 }
 
-void CRUD::Dlete(map<string, string> m, string s)
+void CRUD::Dlete(map<string, string> &m, string s)
 {
 	m.erase(s);
 }

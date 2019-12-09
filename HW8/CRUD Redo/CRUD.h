@@ -17,16 +17,16 @@ using std::pair;
 
 namespace CRUD 
 {
-	void create(map<string, string> m, string s, string f);
+	void create(map<string, string> &m, string s, string f);
 
 	string read(pair<string, string> p);
 	string read(pair<string, string> p, int x);
 	string read(map<string, string> m, string s);
 	void read(map<string, string> m);
 
-	void update(map<string, string> m, string s, string f);
+	void update(map<string, string> &m, string s, string f);
 
-	void Dlete(map<string, string> m, string s);
+	void Dlete(map<string, string> &m, string s);
 }
 
 #endif // !CRUD_h
